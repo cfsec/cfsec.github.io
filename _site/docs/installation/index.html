@@ -1,0 +1,936 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+    <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+            <meta name="viewport" content="width=device-width, initial-scale=1">
+                <!-- Begin Jekyll SEO tag v2.7.1 -->
+<title>Installation | cfsec</title>
+<meta name="generator" content="Jekyll v3.9.0" />
+<meta property="og:title" content="Installation" />
+<meta name="author" content="cfsec" />
+<meta property="og:locale" content="en" />
+<meta name="description" content="Install with brew/linuxbrew:" />
+<meta property="og:description" content="Install with brew/linuxbrew:" />
+<link rel="canonical" href="http://localhost:4000/docs/installation/" />
+<meta property="og:url" content="http://localhost:4000/docs/installation/" />
+<meta property="og:site_name" content="cfsec" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2021-09-29T13:22:50+01:00" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="Installation" />
+<script type="application/ld+json">
+{"description":"Install with brew/linuxbrew:","@type":"BlogPosting","headline":"Installation","dateModified":"2021-09-29T13:22:50+01:00","datePublished":"2021-09-29T13:22:50+01:00","publisher":{"@type":"Organization","logo":{"@type":"ImageObject","url":"http://localhost:4000/logonav.png"},"name":"cfsec"},"mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/docs/installation/"},"author":{"@type":"Person","name":"cfsec"},"url":"http://localhost:4000/docs/installation/","@context":"https://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+
+                <meta property="og:image" content="http://localhost:4000/uploads/logonav.png"/>
+                <link rel="stylesheet" href="/assets/css/main.css">
+                <link rel="stylesheet" href="/assets/css/syntax.css">
+                    <link rel="shortcut icon" type="image/png" href="/uploads/favicon.ico">
+                        <link rel="alternate" type="application/rss+xml" title="cfsec" href="/feed.xml">
+                            <script src="/assets/js/main.js"></script>
+                            
+                                <script>
+function searchResults(form) {
+
+    var currentItem = null;
+    var search = document.getElementById(form);
+    var results = document.getElementById(form + "-results");
+    var toggle = document.getElementById(form + "-toggle");
+
+    function removeActive() {
+        for (i = 0; i < results.children.length; i++) {
+            results.children[i].classList.remove("uk-background-muted");
+        }
+    }
+
+    // Detect all clicks on the document
+    document.addEventListener("click", function(event) {
+
+        var isClickSearch = false;
+        var isClickResults = false;
+        var isClickSearchToggle = false;
+
+        if (search !== null) {
+            isClickSearch = search.contains(event.target);
+        }
+
+        if (results !== null) {
+            isClickResults = results.contains(event.target);
+        }
+
+        if (toggle !== null) {
+            isClickSearchToggle = toggle.contains(event.target);
+        }
+
+        if (isClickSearch || isClickSearchToggle) {
+            results.style.display = "block";
+        }        
+
+        if (!isClickResults && !isClickSearch && !isClickSearchToggle) {
+            results.style.display = "none";
+        }        
+        
+    });    
+
+    results.addEventListener("mouseover", function(event) {
+
+        removeActive();
+        event.target.parentElement.classList.add("uk-background-muted");
+        currentItem = null;
+
+    });
+
+    results.addEventListener("mouseout", function(event) {
+        event.target.parentElement.classList.remove("uk-background-muted");
+    });
+
+
+    search.addEventListener("keyup", function(event) {
+
+        var resultItems = results.children;
+        var resultCount = results.children.length;
+                                
+        if (event.keyCode === 40) {
+
+            if (currentItem < (resultCount - 1)) {
+                if (currentItem === null) {
+                    currentItem = 0;
+                } else {
+                    removeActive();
+                    currentItem++;
+                }
+                removeActive();
+                resultItems[currentItem].classList.add("uk-background-muted");
+            }
+            
+        } else if (event.keyCode === 38) {
+
+            if (currentItem > 0) {
+                if (currentItem === null) {
+                    currentItem = 0;
+                } else {
+                    removeActive();
+                    currentItem--;
+                }
+                removeActive();
+                resultItems[currentItem].classList.add("uk-background-muted");
+            }
+
+        } else if (event.keyCode === 13) {
+
+            resultItems[currentItem].children[0].click();
+
+        }
+
+    });
+
+}
+</script>
+                            
+                            
+                            
+                            <!-- TrenDemon Code -->
+                            <script type="text/javascript" id="trd-flame-load">
+                                TRD_ACC_ID = 1810;
+                                (function (w, d) {
+                                    function go() {
+                                        var trdti = setInterval(function () {
+                                            if (document.readyState === "complete") {
+                                                var bi = document.createElement("script");
+                                                bi.type = "text/javascript";
+                                                bi.async = true;
+                                                bi.src = "https://assets.trendemon.com/tag/trends.min.js";
+                                                bi.id = "trdflame";
+                                                var s = document.getElementsByTagName("script")[0];
+                                                s.parentNode.insertBefore(bi, s);
+                                                clearInterval(trdti);
+                                            }
+                                        }, 500);
+                                    };
+                                    go();
+                                }(window, document));
+                            </script>
+                            <!-- End of TrenDemon Code -->
+                        </head>
+
+
+    <body>
+
+    
+        <div  data-uk-sticky="animation: uk-animation-slide-top; sel-target: .uk-navbar-container; cls-active: uk-navbar-sticky; cls-inactive: uk-navbar-transparent; top: 200" >
+    <nav class="uk-navbar-container">
+        <div class="uk-container">
+            <div data-uk-navbar>
+                <div class="uk-navbar-left">
+                    <a class="uk-navbar-item uk-logo uk-visible@m" href="/">
+                        
+                            <img src="http://localhost:4000/uploads/logonav.png" width="144px" height="43" alt="cfsec">
+                            
+                        </a>
+                        
+                            <a class="uk-navbar-toggle uk-hidden@m" href="#offcanvas-docs" data-uk-toggle>
+                                <span data-uk-navbar-toggle-icon></span>
+                                <span class="uk-margin-small-left">Docs</span>
+                            </a>
+                        
+
+                        <ul class="uk-navbar-nav uk-visible@m">
+                            
+                                
+                                
+                                
+                                    
+                                        
+                                            <li>
+                                                <a href="/" >Home</a>
+                                            </li>
+                                        
+                                    
+                                
+                            
+                                
+                                
+                                
+                                    
+                                        
+                                            <li class="uk-active">
+                                                <a href="/docs/installation/" >Docs</a>
+                                            </li>
+                                        
+                                    
+                                
+                            
+                                
+                                
+                                
+                                    
+                                        
+                                            <li>
+                                                <a href="/blog/" >Blog</a>
+                                            </li>
+                                        
+                                    
+                                
+                            
+                        </ul>
+                    </div>
+                    <div class="uk-navbar-center uk-hidden@m">
+                        <a class="uk-navbar-item uk-logo" href="/">
+                            
+                                <img src="http://localhost:4000/uploads/logonav.png" alt="cfsec">
+                                
+                            </a>
+                        </div>
+                        <div class="uk-navbar-right">
+                            
+                                
+                                    <div class="uk-visible@m">
+                                        <a id="search-navbar-toggle" class="uk-navbar-toggle" uk-search-icon href="#"></a>
+                                        <div class="uk-drop uk-background-default uk-border-rounded" uk-drop="mode: click; pos: left-center; offset: 0">
+                                            <form class="uk-search uk-search-navbar uk-width-1-1" onsubmit="return false;">
+                                                <input id="search-navbar" class="uk-search-input" type="search" placeholder="Search Checks" autofocus autocomplete="off"></form>
+                                                <ul id="search-navbar-results" class="uk-position-absolute uk-width-1-1 uk-list"></ul>
+                                            </div>
+                                        </div>
+                                        <script>
+                                            SimpleJekyllSearch({
+                                                searchInput: document.getElementById('search-navbar'),
+                                                resultsContainer: document.getElementById('search-navbar-results'),
+                                                noResultsText: '<li class="no-results">    No results found</li>',
+                                                searchResultTemplate: '<li><a href="{url}">{title}</a></li>',
+                                                json: "/search.json"
+                                            });
+                                            searchResults("search-navbar");
+                                        </script>
+                                    
+                                
+
+                                <ul class="uk-navbar-nav uk-visible@m">
+                                    
+                                        
+                                        
+                                        
+                                            
+                                                <li>
+                                                    <div class="uk-navbar-item">
+                                                        <a class="uk-button uk-button-success" href="/contact/" >Contact</a>
+                                                    </div>
+                                                </li>
+                                            
+                                        
+                                    
+                                </ul>
+
+                                
+                                    <a class="uk-navbar-toggle uk-hidden@m" href="#offcanvas" data-uk-toggle>
+                                        <span data-uk-navbar-toggle-icon></span>
+                                        <span class="uk-margin-small-left">Menu</span>
+                                    </a>
+                                
+
+                            </div>
+                        </div>
+                    </div>
+                </nav>
+            </div>
+
+    
+
+    <div class="uk-section">
+    <div class="uk-container">
+        <div class="uk-grid-large" data-uk-grid>
+
+            <div class="sidebar-fixed-width uk-visible@m">
+                <div class="sidebar-docs uk-position-fixed uk-margin-top">
+                    
+                    <h5>Getting Started</h5>
+                    <ul class="uk-nav uk-nav-default doc-nav">
+                        
+    
+                      
+                      
+                      
+                      <li class="uk-active"><a href="/docs/installation/">Installation</a></li>
+                    
+                      
+                      
+                      <li class=""><a href="/docs/usage/">Usage</a></li>
+                    
+                    </ul>
+                    
+                    <h5>Services</h5>
+                    <ul class="uk-nav uk-nav-default doc-nav">
+                        
+                        
+                        
+                        
+                        
+                            <li id="api-gateway" class="">api-gateway</li>
+                        <ul class="uk-nav uk-nav-default doc-nav">
+                            
+                            
+                            
+                            <li class=""><a href="/docs/api-gateway/enable-access-logging/#api-gateway">enable-access-logging</a></li>
+                          
+                          </ul>
+                    
+                      
+                        
+                        
+                        
+                        
+                            <li id="athena" class="">athena</li>
+                        <ul class="uk-nav uk-nav-default doc-nav">
+                            
+                            
+                            
+                            <li class=""><a href="/docs/athena/enable-at-rest-encryption/#athena">enable-at-rest-encryption</a></li>
+                          
+                            
+                            
+                            <li class=""><a href="/docs/athena/no-encryption-override/#athena">no-encryption-override</a></li>
+                          
+                          </ul>
+                    
+                      
+                        
+                        
+                        
+                        
+                            <li id="autoscaling" class="">autoscaling</li>
+                        <ul class="uk-nav uk-nav-default doc-nav">
+                            
+                            
+                            
+                            <li class=""><a href="/docs/autoscaling/enable-at-rest-encryption/#autoscaling">enable-at-rest-encryption</a></li>
+                          
+                            
+                            
+                            <li class=""><a href="/docs/autoscaling/no-public-ip/#autoscaling">no-public-ip</a></li>
+                          
+                          </ul>
+                    
+                      
+                        
+                        
+                        
+                        
+                            <li id="cloudfront" class="">cloudfront</li>
+                        <ul class="uk-nav uk-nav-default doc-nav">
+                            
+                            
+                            
+                            <li class=""><a href="/docs/cloudfront/enable-logging/#cloudfront">enable-logging</a></li>
+                          
+                            
+                            
+                            <li class=""><a href="/docs/cloudfront/enable-waf/#cloudfront">enable-waf</a></li>
+                          
+                            
+                            
+                            <li class=""><a href="/docs/cloudfront/enforce-https/#cloudfront">enforce-https</a></li>
+                          
+                            
+                            
+                            <li class=""><a href="/docs/cloudfront/use-secure-tls-policy/#cloudfront">use-secure-tls-policy</a></li>
+                          
+                          </ul>
+                    
+                      
+                        
+                        
+                        
+                        
+                            <li id="cloudtrail" class="">cloudtrail</li>
+                        <ul class="uk-nav uk-nav-default doc-nav">
+                            
+                            
+                            
+                            <li class=""><a href="/docs/cloudtrail/enable-all-regions/#cloudtrail">enable-all-regions</a></li>
+                          
+                            
+                            
+                            <li class=""><a href="/docs/cloudtrail/enable-at-rest-encryption/#cloudtrail">enable-at-rest-encryption</a></li>
+                          
+                            
+                            
+                            <li class=""><a href="/docs/cloudtrail/enable-log-validation/#cloudtrail">enable-log-validation</a></li>
+                          
+                          </ul>
+                    
+                      
+                        
+                        
+                        
+                        
+                            <li id="cloudwatch" class="">cloudwatch</li>
+                        <ul class="uk-nav uk-nav-default doc-nav">
+                            
+                            
+                            
+                            <li class=""><a href="/docs/cloudwatch/log-group-customer-key/#cloudwatch">log-group-customer-key</a></li>
+                          
+                          </ul>
+                    
+                      
+                        
+                        
+                        
+                        
+                            <li id="config" class="">config</li>
+                        <ul class="uk-nav uk-nav-default doc-nav">
+                            
+                            
+                            
+                            <li class=""><a href="/docs/config/aggregate-all-regions/#config">aggregate-all-regions</a></li>
+                          
+                          </ul>
+                    
+                      
+                        
+                        
+                        
+                        
+                            <li id="documentdb" class="">documentdb</li>
+                        <ul class="uk-nav uk-nav-default doc-nav">
+                            
+                            
+                            
+                            <li class=""><a href="/docs/documentdb/enable-log-export/#documentdb">enable-log-export</a></li>
+                          
+                            
+                            
+                            <li class=""><a href="/docs/documentdb/enable-storage-encryption/#documentdb">enable-storage-encryption</a></li>
+                          
+                            
+                            
+                            <li class=""><a href="/docs/documentdb/encryption-customer-key/#documentdb">encryption-customer-key</a></li>
+                          
+                          </ul>
+                    
+                      
+                        
+                        
+                        
+                        
+                            <li id="ebs" class="">ebs</li>
+                        <ul class="uk-nav uk-nav-default doc-nav">
+                            
+                            
+                            
+                            <li class=""><a href="/docs/ebs/enable-volume-encryption/#ebs">enable-volume-encryption</a></li>
+                          
+                            
+                            
+                            <li class=""><a href="/docs/ebs/encryption-customer-key/#ebs">encryption-customer-key</a></li>
+                          
+                          </ul>
+                    
+                      
+                        
+                        
+                        
+                        
+                            <li id="ec2" class="">ec2</li>
+                        <ul class="uk-nav uk-nav-default doc-nav">
+                            
+                            
+                            
+                            <li class=""><a href="/docs/ec2/no-secrets-in-user-data/#ec2">no-secrets-in-user-data</a></li>
+                          
+                          </ul>
+                    
+                      
+                        
+                        
+                        
+                        
+                            <li id="ecr" class="">ecr</li>
+                        <ul class="uk-nav uk-nav-default doc-nav">
+                            
+                            
+                            
+                            <li class=""><a href="/docs/ecr/enable-image-scans/#ecr">enable-image-scans</a></li>
+                          
+                            
+                            
+                            <li class=""><a href="/docs/ecr/enforce-immutable-repository/#ecr">enforce-immutable-repository</a></li>
+                          
+                            
+                            
+                            <li class=""><a href="/docs/ecr/no-public-access/#ecr">no-public-access</a></li>
+                          
+                            
+                            
+                            <li class=""><a href="/docs/ecr/repository-customer-key/#ecr">repository-customer-key</a></li>
+                          
+                          </ul>
+                    
+                      
+                        
+                        
+                        
+                        
+                            <li id="ecs" class="">ecs</li>
+                        <ul class="uk-nav uk-nav-default doc-nav">
+                            
+                            
+                            
+                            <li class=""><a href="/docs/ecs/enable-container-insight/#ecs">enable-container-insight</a></li>
+                          
+                            
+                            
+                            <li class=""><a href="/docs/ecs/enable-in-transit-encryption/#ecs">enable-in-transit-encryption</a></li>
+                          
+                            
+                            
+                            <li class=""><a href="/docs/ecs/no-plaintext-secrets/#ecs">no-plaintext-secrets</a></li>
+                          
+                          </ul>
+                    
+                      
+                        
+                        
+                        
+                        
+                            <li id="efs" class="">efs</li>
+                        <ul class="uk-nav uk-nav-default doc-nav">
+                            
+                            
+                            
+                            <li class=""><a href="/docs/efs/enable-at-rest-encryption/#efs">enable-at-rest-encryption</a></li>
+                          
+                          </ul>
+                    
+                      
+                        
+                        
+                        
+                        
+                            <li id="s3" class="">s3</li>
+                        <ul class="uk-nav uk-nav-default doc-nav">
+                            
+                            
+                            
+                            <li class=""><a href="/docs/s3/block-public-acls/#s3">block-public-acls</a></li>
+                          
+                            
+                            
+                            <li class=""><a href="/docs/s3/enable-bucket-encryption/#s3">enable-bucket-encryption</a></li>
+                          
+                            
+                            
+                            <li class=""><a href="/docs/s3/enable-bucket-logging/#s3">enable-bucket-logging</a></li>
+                          
+                            
+                            
+                            <li class=""><a href="/docs/s3/enable-versioning/#s3">enable-versioning</a></li>
+                          
+                            
+                            
+                            <li class=""><a href="/docs/s3/no-public-access-with-acl/#s3">no-public-access-with-acl</a></li>
+                          
+                            
+                            
+                            <li class=""><a href="/docs/s3/no-public-access-with-acl/#s3">no-public-access-with-acl</a></li>
+                          
+                          </ul>
+                    
+                      
+                        
+                        
+                        
+                        
+                            <li id="workspaces" class="">workspaces</li>
+                        <ul class="uk-nav uk-nav-default doc-nav">
+                            
+                            
+                            
+                            <li class=""><a href="/docs/workspaces/enable-disk-encryption/#workspaces">enable-disk-encryption</a></li>
+                          
+                          </ul>
+                    
+                      
+    
+                      
+                    </ul>
+                    
+                </div>
+            </div>
+
+            <div class="uk-width-1-1 uk-width-expand@m">
+
+                <article class="uk-article">
+
+                    <h1 class="uk-article-title">Installation</h1>
+
+                    <div class="uk-article-meta uk-margin-top uk-margin-medium-bottom uk-flex uk-flex-middle">
+                        
+
+
+
+    <div>
+        
+            
+                <br>
+                    
+                        Written by
+
+                        <span itemprop="author" itemscope itemtype="http://schema.org/Person">
+                            <span itemprop="name">cfsec</span>
+                        </span>
+                        <br>
+                        
+                        <time datetime="2021-09-29T13:22:50+01:00" itemprop="datePublished">
+                            
+                            Sep 29, 2021
+                        </time>
+                    </div>
+
+                    </div>
+
+                    <div class="article-content link-primary">
+                        <p>Install with brew/linuxbrew:</p>
+
+<pre><code class="language-cmd">brew install cfsec
+</code></pre>
+
+<p>Install with Chocolatey:</p>
+
+<pre><code class="language-cmd">choco install cfsec
+</code></pre>
+
+<p>You can also grab the binary for your system from the <a href="https://github.com/aquasecurity/cfsec/releases">releases page</a>.</p>
+
+<p>Alternatively, install with Go:</p>
+
+<pre><code class="language-cmd">go install github.com/aquasecurity/cfsec/cmd/cfsec@latest
+</code></pre>
+
+<h3 id="verifying-signed-binaries">Verifying signed binaries</h3>
+
+<p>All cfsec binaries are signed with out signing key <code class="language-plaintext highlighter-rouge">D66B222A3EA4C25D5D1A097FC34ACEFB46EC39CE</code>. The steps below detail how to verify the signature of the keys.</p>
+
+<h4 id="public-key">Public Key</h4>
+
+<p>The public key for <code class="language-plaintext highlighter-rouge">signing@cfsec.dev</code> can be downloaded <a href="/assets/signing.asc">here</a></p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>-----BEGIN PGP PUBLIC KEY BLOCK-----
+
+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
+nX5QmAEwF/nBYV3Du7TIvHtz91yL8A==
+=opqY
+-----END PGP PUBLIC KEY BLOCK-----
+</code></pre></div></div>
+
+<h4 id="steps-for-verification">Steps for Verification</h4>
+
+<ol>
+  <li>
+    <p>Copy the public key block into a new file, eg; /tmp/cfsec_key.txt</p>
+  </li>
+  <li>Import the gpg key
+    <pre><code class="language-cmd"> gpg --import &lt; /tmp/cfsec_key.txt
+</code></pre>
+  </li>
+  <li>Verify that the key has been imported
+    <pre><code class="language-cmd"> gpg --list-keys signing@cfsec.dev
+</code></pre>
+    <p>check the output is</p>
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code> pub  rsa4096 2021-05-20 [SC]       D66B222A3EA4C25D5D1A097FC34ACEFB46EC39CE
+ uid  [ultimate] cfsec Signing (Code signing for cfsec) &lt;signing@cfsec.dev&gt;
+ sub  rsa4096 2021-05-20 [E]
+</code></pre></div>    </div>
+  </li>
+  <li>
+    <p>Download the required binary and its associated sig file</p>
+  </li>
+  <li>Assuming it is <code class="language-plaintext highlighter-rouge">cfsec-linux-amd64</code> the verify command below should be run, passing in the sig file then the binary file
+    <pre><code class="language-cmd">gpg --verify cfsec-linux-amd64.D66B222A3EA4C25D5D1A097FC34ACEFB46EC39CE.sig cfsec-linux-amd64
+</code></pre>
+    <p>This should give you a similar output to that below - the key part is that it is signed and has a <code class="language-plaintext highlighter-rouge">Good signature</code></p>
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>gpg: Signature made Fri 09 Jul 2021 11:41:22 BST
+gpg:                using RSA key D66B222A3EA4C25D5D1A097FC34ACEFB46EC39CE
+gpg: Good signature from "cfsec Signing (Code signing for cfsec) &lt;signing@cfsec.dev&gt;" [ultimate]
+
+</code></pre></div>    </div>
+  </li>
+</ol>
+
+<h2 id="usage">Usage</h2>
+
+<p>cfsec will scan the specified directory. If no directory is specified, the current working directory will be used.</p>
+
+<p>The exit status will be non-zero if cfsec finds problems, otherwise the exit status will be zero.</p>
+
+<pre><code class="language-cmd">cfsec .
+</code></pre>
+
+<h2 id="use-with-docker">Use with Docker</h2>
+
+<p>As an alternative to installing and running cfsec on your system, you may
+run cfsec in a Docker container.</p>
+
+<p>To run:</p>
+
+<pre><code class="language-cmd">docker run --rm -it -v "$(pwd):/src" aquasec/cfsec /src
+</code></pre>
+
+
+                        
+                    </div>
+
+                    
+
+                    <hr class="uk-margin-medium">
+
+                    
+
+
+  
+  
+    <div class="uk-margin-large-top paginate-post">
+        <div class="uk-child-width-expand@s uk-grid-large uk-pagi" data-uk-grid>
+            <div>
+                
+                
+            </div>
+            <div>
+                
+                  
+                  
+                  
+                    <h5 class="uk-text-right">Usage</h5>
+                    <div class="uk-text-right"><a class="remove-underline hvr-forward" href="/docs/usage/">Next &rarr;</a></div>
+                
+            </div>
+        </div>
+    </div>
+    
+
+                </article>
+
+                <script>
+                    // Table of contents scroll to
+                    UIkit.scroll('#markdown-toc a', {
+                        duration: 400,
+                        offset: 120
+                    });
+                </script>
+
+            </div>
+
+    </div>
+</div>
+
+
+    <div id="offcanvas-docs" data-uk-offcanvas="overlay: true">
+    <div class="uk-offcanvas-bar">
+
+        <button class="uk-offcanvas-close" type="button" data-uk-close></button>
+
+        
+            <h5>Getting Started</h5>
+            <ul class="uk-nav uk-nav-default doc-nav">
+                
+
+                
+                    
+                    
+                    <li class="uk-active">
+                        <a href="/docs/installation/">Installation</a>
+                    </li>
+                
+                    
+                    
+                    <li class="">
+                        <a href="/docs/usage/">Usage</a>
+                    </li>
+                
+            </ul>
+        
+            <h5>Services</h5>
+            <ul class="uk-nav uk-nav-default doc-nav">
+                
+
+                
+            </ul>
+        
+
+    </div>
+</div>
+
+
+    <div id="offcanvas" data-uk-offcanvas="flip: true; overlay: true">
+    <div class="uk-offcanvas-bar">
+
+        <a class="uk-logo uk-margin-small-bottom" href="/"><img src="http://localhost:4000/uploads/logonav.png" alt="cfsec"></a>
+     
+        <button class="uk-offcanvas-close" type="button" data-uk-close></button>
+      
+        <ul class="uk-nav uk-nav-primary uk-margin-top">
+            
+                
+
+                
+
+                
+                    <li><a href="/" >Home</a></li>
+                
+            
+                
+
+                
+
+                
+                    <li class="uk-active"><a href="/docs/installation/" >Docs</a></li>
+                
+            
+                
+
+                
+
+                
+                    <li><a href="/blog/" >Blog</a></li>
+                
+            
+                
+
+                
+
+                
+                    <li><div class="uk-navbar-item"><a class="uk-button uk-button-success" href="/contact/" >Contact</a></div></li>
+                
+            
+        </ul>
+
+        <div class="uk-margin-top uk-text-center">
+            <div data-uk-grid class="uk-child-width-auto uk-grid-small uk-flex-center uk-grid">
+                
+
+
+
+
+
+
+
+
+
+
+<div>
+    <a href="https://github.com/aquasecurity/cfsec" data-uk-icon="icon: github" class="uk-icon-link uk-icon" target="_blank"></a>
+</div>
+
+
+
+<div>
+    <a href="https://wip.cfsec.dev" data-uk-icon="icon: link" class="uk-icon-link uk-icon" target="_blank"></a>
+</div>
+
+
+            </div>
+        </div>
+
+    </div>
+</div>
+
+
+    
+
+    
+        
+    
+
+    
+
+    </body>
+
+</html>

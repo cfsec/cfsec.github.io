@@ -1,0 +1,108 @@
+title: cfsec
+description: A static analysis security scanner for your Cloudformation code. Discover problems with your infrastructure before hackers do.
+lang: en
+
+# Site subpath, e.g. /blog
+baseurl: ""
+
+# Permalink URLs structure, for permalink style options see: https://jekyllrb.com/docs/permalinks/
+permalink: /:title/
+
+url: "https://wip.cfsec.dev"
+
+logo: "logonav.png"
+
+navbar:
+  sticky: true
+  search: true
+
+author:
+  name: cfsec
+
+# Author settings, displayed on post and doc pages if front matter references author name e.g. author: peter
+authors:
+  cfsec:
+    name: cfsec
+  Owen:
+    name: Owen
+  Liam:
+    name: Liam
+
+# Social icons displayed in footer
+social:
+  email:
+  website: https://wip.cfsec.dev
+  facebook:
+  flickr:
+  dribbble:
+  github: https://github.com/aquasecurity/cfsec
+
+# Share button
+share:
+  post: false # Display share buttons on a post page
+  doc: false # Display share buttons on a doc page
+  twitter: cfsec_dev # Enable by adding Twitter handle
+  facebook: false # Enable by setting true (Facebook handle not required)
+
+# Default footer image settings
+footer:
+  copyright:
+
+# Disqus comments shortname, requires Disqus account https://disqus.com/
+disqus:
+  shortname: # 1234
+
+# Google analytics code, get your code here https://www.google.com/analytics/
+google_analytics: "G-97TKYVXF4T"
+
+# Number of posts displayed on blog page
+paginate: 10
+
+# Blog path
+paginate_path: "/blog/:num/"
+
+# Path to post content assets directory i.e post images, pdfs etc
+uploads: /uploads/
+
+# Build settings
+markdown: kramdown
+highlighter: rouge
+
+repository: cfsec/cfsec.github.io
+
+plugins:
+  - jekyll-feed
+  - jekyll-seo-tag
+  - jekyll-gist
+  - jekyll-avatar
+  - jekyll-redirect-from
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - node_modules
+
+sass:
+  style: compressed
+
+collections:
+  docs:
+    output: true
+  faqs:
+    output: false
+  changelogs:
+    output: false
+
+# Defaults
+defaults:
+  # _posts
+  - scope:
+      path: ""
+      type: posts
+    values:
+      layout: post
+  # _docs
+  - scope:
+      path: ""
+      type: docs
+    values:
+      layout: doc

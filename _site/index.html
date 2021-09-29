@@ -1,0 +1,659 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+    <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+            <meta name="viewport" content="width=device-width, initial-scale=1">
+                <!-- Begin Jekyll SEO tag v2.7.1 -->
+<title>cfsec | A static analysis security scanner for your Terraform code. Discover problems with your infrastructure before hackers do.</title>
+<meta name="generator" content="Jekyll v3.9.0" />
+<meta property="og:title" content="cfsec" />
+<meta name="author" content="cfsec" />
+<meta property="og:locale" content="en" />
+<meta name="description" content="A static analysis security scanner for your Terraform code. Discover problems with your infrastructure before hackers do." />
+<meta property="og:description" content="A static analysis security scanner for your Terraform code. Discover problems with your infrastructure before hackers do." />
+<link rel="canonical" href="http://localhost:4000/" />
+<meta property="og:url" content="http://localhost:4000/" />
+<meta property="og:site_name" content="cfsec" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="cfsec" />
+<script type="application/ld+json">
+{"description":"A static analysis security scanner for your Terraform code. Discover problems with your infrastructure before hackers do.","@type":"WebSite","headline":"cfsec","publisher":{"@type":"Organization","logo":{"@type":"ImageObject","url":"http://localhost:4000/logonav.png"},"name":"cfsec"},"author":{"@type":"Person","name":"cfsec"},"url":"http://localhost:4000/","name":"cfsec","@context":"https://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+
+                <meta property="og:image" content="http://localhost:4000/uploads/logonav.png"/>
+                <link rel="stylesheet" href="/assets/css/main.css">
+                <link rel="stylesheet" href="/assets/css/syntax.css">
+                    <link rel="shortcut icon" type="image/png" href="/uploads/favicon.ico">
+                        <link rel="alternate" type="application/rss+xml" title="cfsec" href="/feed.xml">
+                            <script src="/assets/js/main.js"></script>
+                            
+                                <script>
+function searchResults(form) {
+
+    var currentItem = null;
+    var search = document.getElementById(form);
+    var results = document.getElementById(form + "-results");
+    var toggle = document.getElementById(form + "-toggle");
+
+    function removeActive() {
+        for (i = 0; i < results.children.length; i++) {
+            results.children[i].classList.remove("uk-background-muted");
+        }
+    }
+
+    // Detect all clicks on the document
+    document.addEventListener("click", function(event) {
+
+        var isClickSearch = false;
+        var isClickResults = false;
+        var isClickSearchToggle = false;
+
+        if (search !== null) {
+            isClickSearch = search.contains(event.target);
+        }
+
+        if (results !== null) {
+            isClickResults = results.contains(event.target);
+        }
+
+        if (toggle !== null) {
+            isClickSearchToggle = toggle.contains(event.target);
+        }
+
+        if (isClickSearch || isClickSearchToggle) {
+            results.style.display = "block";
+        }        
+
+        if (!isClickResults && !isClickSearch && !isClickSearchToggle) {
+            results.style.display = "none";
+        }        
+        
+    });    
+
+    results.addEventListener("mouseover", function(event) {
+
+        removeActive();
+        event.target.parentElement.classList.add("uk-background-muted");
+        currentItem = null;
+
+    });
+
+    results.addEventListener("mouseout", function(event) {
+        event.target.parentElement.classList.remove("uk-background-muted");
+    });
+
+
+    search.addEventListener("keyup", function(event) {
+
+        var resultItems = results.children;
+        var resultCount = results.children.length;
+                                
+        if (event.keyCode === 40) {
+
+            if (currentItem < (resultCount - 1)) {
+                if (currentItem === null) {
+                    currentItem = 0;
+                } else {
+                    removeActive();
+                    currentItem++;
+                }
+                removeActive();
+                resultItems[currentItem].classList.add("uk-background-muted");
+            }
+            
+        } else if (event.keyCode === 38) {
+
+            if (currentItem > 0) {
+                if (currentItem === null) {
+                    currentItem = 0;
+                } else {
+                    removeActive();
+                    currentItem--;
+                }
+                removeActive();
+                resultItems[currentItem].classList.add("uk-background-muted");
+            }
+
+        } else if (event.keyCode === 13) {
+
+            resultItems[currentItem].children[0].click();
+
+        }
+
+    });
+
+}
+</script>
+                            
+                            
+                            
+                            <!-- TrenDemon Code -->
+                            <script type="text/javascript" id="trd-flame-load">
+                                TRD_ACC_ID = 1810;
+                                (function (w, d) {
+                                    function go() {
+                                        var trdti = setInterval(function () {
+                                            if (document.readyState === "complete") {
+                                                var bi = document.createElement("script");
+                                                bi.type = "text/javascript";
+                                                bi.async = true;
+                                                bi.src = "https://assets.trendemon.com/tag/trends.min.js";
+                                                bi.id = "trdflame";
+                                                var s = document.getElementsByTagName("script")[0];
+                                                s.parentNode.insertBefore(bi, s);
+                                                clearInterval(trdti);
+                                            }
+                                        }, 500);
+                                    };
+                                    go();
+                                }(window, document));
+                            </script>
+                            <!-- End of TrenDemon Code -->
+                        </head>
+
+
+    <body>
+
+    
+        
+
+
+
+<header class="uk-background-center-center uk-background-cover" style="">
+    <div class="uk-overlay-header" style="">
+
+        <div  data-uk-sticky="animation: uk-animation-slide-top; sel-target: .uk-navbar-container; cls-active: uk-navbar-sticky; cls-inactive: uk-navbar-transparent; top: 200" >
+    <nav class="uk-navbar-container">
+        <div class="uk-container">
+            <div data-uk-navbar>
+                <div class="uk-navbar-left">
+                    <a class="uk-navbar-item uk-logo uk-visible@m" href="/">
+                        
+                            <img src="http://localhost:4000/uploads/logonav.png" width="144px" height="43" alt="cfsec">
+                            
+                        </a>
+                        
+                            <a class="uk-navbar-toggle uk-hidden@m" href="#offcanvas-docs" data-uk-toggle>
+                                <span data-uk-navbar-toggle-icon></span>
+                                <span class="uk-margin-small-left">Docs</span>
+                            </a>
+                        
+
+                        <ul class="uk-navbar-nav uk-visible@m">
+                            
+                                
+                                
+                                
+                                    
+                                        
+                                            <li class="uk-active">
+                                                <a href="/" >Home</a>
+                                            </li>
+                                        
+                                    
+                                
+                            
+                                
+                                
+                                
+                                    
+                                        
+                                            <li>
+                                                <a href="/docs/installation/" >Docs</a>
+                                            </li>
+                                        
+                                    
+                                
+                            
+                                
+                                
+                                
+                                    
+                                        
+                                            <li>
+                                                <a href="/blog/" >Blog</a>
+                                            </li>
+                                        
+                                    
+                                
+                            
+                        </ul>
+                    </div>
+                    <div class="uk-navbar-center uk-hidden@m">
+                        <a class="uk-navbar-item uk-logo" href="/">
+                            
+                                <img src="http://localhost:4000/uploads/logonav.png" alt="cfsec">
+                                
+                            </a>
+                        </div>
+                        <div class="uk-navbar-right">
+                            
+                                
+                                
+
+                                <ul class="uk-navbar-nav uk-visible@m">
+                                    
+                                        
+                                        
+                                        
+                                            
+                                                <li>
+                                                    <div class="uk-navbar-item">
+                                                        <a class="uk-button uk-button-success" href="/contact/" >Contact</a>
+                                                    </div>
+                                                </li>
+                                            
+                                        
+                                    
+                                </ul>
+
+                                
+                                    <a class="uk-navbar-toggle uk-hidden@m" href="#offcanvas" data-uk-toggle>
+                                        <span data-uk-navbar-toggle-icon></span>
+                                        <span class="uk-margin-small-left">Menu</span>
+                                    </a>
+                                
+
+                            </div>
+                        </div>
+                    </div>
+                </nav>
+            </div>
+
+
+        <div class="uk-section section-hero uk-position-relative" data-uk-scrollspy="cls: uk-animation-slide-bottom-medium; repeat: true">
+            <div class="uk-container uk-container-small">
+                
+                <p class="hero-image uk-text-center"><img src="http://localhost:4000/uploads/logo.png" alt="Hero"></p>
+                
+                <h1 class="uk-heading-primary uk-text-center uk-margin-remove-top"></h1>
+                <p class="uk-text-lead uk-text-center">A static analysis security scanner for your Cloud Formation code</p>
+                   
+                <br/><p class="uk-text-lead uk-text-center">cfsec is a developer-first security scanner for Cloud Formation templates. It uses static analysis to parse your yaml or json files to ensure security issues can be detected before your infrastructure changes take effect. <br/><br/>Designed to run locally or in your CI pipelines, developer-friendly output and fully documented checks mean detection and remediation can take place as quickly and efficiently as possible.</p>
+
+                
+                <div class="hero-search">
+
+                    <!-- Html Elements for Search -->
+                    <div class="uk-position-relative">
+                        <form class="uk-search uk-search-default uk-width-1-1" name="search-hero" onsubmit="return false;">
+                            <span class="uk-search-icon-flip" data-uk-search-icon></span>
+                            <input id="search-hero" class="uk-search-input uk-box-shadow-large" type="search" placeholder="Search Checks" autocomplete="off">
+                        </form>
+                        <ul id="search-hero-results" class="uk-position-absolute uk-width-1-1 uk-list"></ul>
+                    </div>
+
+                    <script>
+                    SimpleJekyllSearch({
+                        searchInput: document.getElementById('search-hero'),
+                        resultsContainer: document.getElementById('search-hero-results'),
+                        noResultsText: '<li class="no-results">No results found</li>',
+                        searchResultTemplate: '<li><a href="{url}">{title}</a></li>',
+                        json: "/search.json"
+                    });
+
+                    searchResults("search-hero");
+
+                    </script>
+
+                </div>
+                
+
+            </div>
+        </div>
+
+    </div>
+</header>
+    
+
+    
+    <!-- 
+
+<div class="uk-section">
+    <div class="uk-container">
+
+        
+            <h2 class="uk-h1 uk-text-center">Browse Checks</h2>
+        
+
+        <p class="uk-text-lead uk-text-center">Chose an option that you need help with or search above</p>
+
+        <div class="uk-child-width-1-3@m uk-grid-match uk-text-center uk-margin-medium-top" data-uk-grid>
+        
+            
+            
+            
+            <div>
+                <div class="uk-card uk-card-default uk-box-shadow-medium uk-card-hover uk-card-body uk-inline border-radius-large border-xlight">
+                    <a class="uk-position-cover" href=""></a>
+                    
+                    <span data-uk-icon="icon: aws; ratio: 3.4" class=""></span>
+                    
+                    <h3 class="uk-card-title uk-margin">API Gateway</h3>
+                    
+                    <p>Browse checks for the AWS provider</p>
+                    
+                </div>
+            </div>
+            
+        
+            
+            
+            
+            <div>
+                <div class="uk-card uk-card-default uk-box-shadow-medium uk-card-hover uk-card-body uk-inline border-radius-large border-xlight">
+                    <a class="uk-position-cover" href=""></a>
+                    
+                    <span data-uk-icon="icon: azure; ratio: 3.4" class=""></span>
+                    
+                    <h3 class="uk-card-title uk-margin">Azure</h3>
+                    
+                    <p>Browse checks for the Azure provider</p>
+                    
+                </div>
+            </div>
+            
+        
+            
+            
+            
+            <div>
+                <div class="uk-card uk-card-default uk-box-shadow-medium uk-card-hover uk-card-body uk-inline border-radius-large border-xlight">
+                    <a class="uk-position-cover" href=""></a>
+                    
+                    <span data-uk-icon="icon: gcp; ratio: 3.4" class=""></span>
+                    
+                    <h3 class="uk-card-title uk-margin">GCP</h3>
+                    
+                    <p>Browse checks for the Google Cloud provider</p>
+                    
+                </div>
+            </div>
+            
+        
+            
+            
+            
+            <div>
+                <div class="uk-card uk-card-default uk-box-shadow-medium uk-card-hover uk-card-body uk-inline border-radius-large border-xlight">
+                    <a class="uk-position-cover" href=""></a>
+                    
+                    <span data-uk-icon="icon: digitalocean; ratio: 3.4" class=""></span>
+                    
+                    <h3 class="uk-card-title uk-margin">Digital Ocean</h3>
+                    
+                    <p>Browse checks for the Digital Ocean provider</p>
+                    
+                </div>
+            </div>
+            
+        
+            
+            
+            
+            <div>
+                <div class="uk-card uk-card-default uk-box-shadow-medium uk-card-hover uk-card-body uk-inline border-radius-large border-xlight">
+                    <a class="uk-position-cover" href=""></a>
+                    
+                    <span data-uk-icon="icon: openstack; ratio: 3.4" class=""></span>
+                    
+                    <h3 class="uk-card-title uk-margin">OpenStack</h3>
+                    
+                    <p>Browse checks for the OpenStack provider</p>
+                    
+                </div>
+            </div>
+            
+        
+            
+            
+            
+            <div>
+                <div class="uk-card uk-card-default uk-box-shadow-medium uk-card-hover uk-card-body uk-inline border-radius-large border-xlight">
+                    <a class="uk-position-cover" href=""></a>
+                    
+                    <span data-uk-icon="icon: cloudstack; ratio: 3.4" class=""></span>
+                    
+                    <h3 class="uk-card-title uk-margin">CloudStack</h3>
+                    
+                    <p>Browse checks for the Cloud Stack provider</p>
+                    
+                </div>
+            </div>
+            
+        
+        </div>
+
+    </div>
+</div> -->
+
+<div class="uk-section">
+    <div class="uk-container uk-container-small">
+
+        
+            <h2 class="uk-h1 uk-text-center">Frequently asked questions</h2>
+        
+
+        
+            <p class="uk-text-center uk-text-lead">Answers to the questions most commonly asked</p>
+        
+
+        
+
+        <ul class="uk-margin-medium-top" data-uk-accordion="multiple: true">
+            
+                <li>
+                    <a class="uk-accordion-title uk-box-shadow-hover-small" href="#">How do I install cfsec locally?</a>
+                    <div class="article-content uk-accordion-content link-primary"><p>cfsec runs on Window, MacOS and Linux, for more information on how to install you can check the <a href="/docs/installation">installation guide</a></p>
+</div>                
+                </li>
+            
+                <li>
+                    <a class="uk-accordion-title uk-box-shadow-hover-small" href="#">Can I use cfsec in my CI?</a>
+                    <div class="article-content uk-accordion-content link-primary"><p>Yes! cfsec is a great addition to your CI. You can include it in Travis and CircleCI builds using <code class="language-plaintext highlighter-rouge">wget</code> and the latest release or if you’re using GitHub Actions you can quickly run checks with either of our ready made Actions.</p>
+
+<!-- * [PR Commenter Action](/docs/pr-commenter)
+* [Code Scanning Action](/docs/github-action) -->
+</div>                
+                </li>
+            
+                <li>
+                    <a class="uk-accordion-title uk-box-shadow-hover-small" href="#">How much does cfsec cost?</a>
+                    <div class="article-content uk-accordion-content link-primary"><p>It’s free! Just get the latest version and run it against your code!</p>
+</div>                
+                </li>
+            
+                <li>
+                    <a class="uk-accordion-title uk-box-shadow-hover-small" href="#">Someone told me my code is failing cfsec, what does the check mean?</a>
+                    <div class="article-content uk-accordion-content link-primary"><p>All cfsec checks have a code to identify them. You can check the documentation for more information about what the check failure means and how to resolve it.</p>
+</div>                
+                </li>
+            
+        </ul>
+
+    </div>
+</div>
+
+
+
+
+    <div id="offcanvas-docs" data-uk-offcanvas="overlay: true">
+    <div class="uk-offcanvas-bar">
+
+        <button class="uk-offcanvas-close" type="button" data-uk-close></button>
+
+        
+            <h5>Getting Started</h5>
+            <ul class="uk-nav uk-nav-default doc-nav">
+                
+
+                
+                    
+                    
+                    <li class="">
+                        <a href="/docs/installation/">Installation</a>
+                    </li>
+                
+                    
+                    
+                    <li class="">
+                        <a href="/docs/usage/">Usage</a>
+                    </li>
+                
+            </ul>
+        
+            <h5>Services</h5>
+            <ul class="uk-nav uk-nav-default doc-nav">
+                
+
+                
+            </ul>
+        
+
+    </div>
+</div>
+
+
+    <div id="offcanvas" data-uk-offcanvas="flip: true; overlay: true">
+    <div class="uk-offcanvas-bar">
+
+        <a class="uk-logo uk-margin-small-bottom" href="/"><img src="http://localhost:4000/uploads/logonav.png" alt="cfsec"></a>
+     
+        <button class="uk-offcanvas-close" type="button" data-uk-close></button>
+      
+        <ul class="uk-nav uk-nav-primary uk-margin-top">
+            
+                
+
+                
+
+                
+                    <li class="uk-active"><a href="/" >Home</a></li>
+                
+            
+                
+
+                
+
+                
+                    <li><a href="/docs/installation/" >Docs</a></li>
+                
+            
+                
+
+                
+
+                
+                    <li><a href="/blog/" >Blog</a></li>
+                
+            
+                
+
+                
+
+                
+                    <li><div class="uk-navbar-item"><a class="uk-button uk-button-success" href="/contact/" >Contact</a></div></li>
+                
+            
+        </ul>
+
+        <div class="uk-margin-top uk-text-center">
+            <div data-uk-grid class="uk-child-width-auto uk-grid-small uk-flex-center uk-grid">
+                
+
+
+
+
+
+
+
+
+
+
+<div>
+    <a href="https://github.com/aquasecurity/cfsec" data-uk-icon="icon: github" class="uk-icon-link uk-icon" target="_blank"></a>
+</div>
+
+
+
+<div>
+    <a href="https://wip.cfsec.dev" data-uk-icon="icon: link" class="uk-icon-link uk-icon" target="_blank"></a>
+</div>
+
+
+            </div>
+        </div>
+
+    </div>
+</div>
+
+
+    
+        <footer class="uk-section uk-text-center uk-text-muted">
+    <div class="uk-container uk-container-small">
+
+        <div>
+            <ul class="uk-subnav uk-flex-center">
+                
+                    
+                    
+                    
+                        <li class="uk-active"><a href="/" >Home</a></li>
+                    
+                
+                    
+                    
+                    
+                        <li><a href="/blog/" >Blog</a></li>
+                    
+                
+                    
+                    
+                    
+                        <li><a href="/contact/" >Contact</a></li>
+                    
+                
+            </ul>
+        </div>
+        <div class="uk-margin-medium">
+            <div data-uk-grid class="uk-child-width-auto uk-grid-small uk-flex-center uk-grid">
+                
+
+
+
+
+
+
+
+
+
+
+<div>
+    <a href="https://github.com/aquasecurity/cfsec" data-uk-icon="icon: github" class="uk-icon-link uk-icon" target="_blank"></a>
+</div>
+
+
+
+<div>
+    <a href="https://wip.cfsec.dev" data-uk-icon="icon: link" class="uk-icon-link uk-icon" target="_blank"></a>
+</div>
+
+
+            </div>
+        </div>
+        <div class="uk-margin-medium uk-text-small copyright link-secondary"></div>
+
+    </div>
+</footer>
+
+    
+
+    
+
+    
+
+    </body>
+
+</html>

@@ -1,0 +1,91 @@
+---
+- title: Getting Started
+  state: open
+  docs:
+  - installation
+  - usage
+
+- title: Services
+  services:
+  - title: api-gateway
+    service: api-gateway
+    docs:
+    - api-gateway/enable-access-logging
+  - title: athena
+    service: athena
+    docs:
+    - athena/enable-at-rest-encryption
+    - athena/no-encryption-override
+  - title: autoscaling
+    service: autoscaling
+    docs:
+    - autoscaling/enable-at-rest-encryption
+    - autoscaling/no-public-ip
+  - title: cloudfront
+    service: cloudfront
+    docs:
+    - cloudfront/enable-logging
+    - cloudfront/enable-waf
+    - cloudfront/enforce-https
+    - cloudfront/use-secure-tls-policy
+  - title: cloudtrail
+    service: cloudtrail
+    docs:
+    - cloudtrail/enable-all-regions
+    - cloudtrail/enable-at-rest-encryption
+    - cloudtrail/enable-log-validation
+  - title: cloudwatch
+    service: cloudwatch
+    docs:
+    - cloudwatch/log-group-customer-key
+  - title: config
+    service: config
+    docs:
+    - config/aggregate-all-regions
+  - title: documentdb
+    service: documentdb
+    docs:
+    - documentdb/enable-log-export
+    - documentdb/enable-storage-encryption
+    - documentdb/encryption-customer-key
+  - title: ebs
+    service: ebs
+    docs:
+    - ebs/enable-volume-encryption
+    - ebs/encryption-customer-key
+  - title: ec2
+    service: ec2
+    docs:
+    - ec2/no-secrets-in-user-data
+  - title: ecr
+    service: ecr
+    docs:
+    - ecr/enable-image-scans
+    - ecr/enforce-immutable-repository
+    - ecr/no-public-access
+    - ecr/repository-customer-key
+  - title: ecs
+    service: ecs
+    docs:
+    - ecs/enable-container-insight
+    - ecs/enable-in-transit-encryption
+    - ecs/no-plaintext-secrets
+  - title: efs
+    service: efs
+    docs:
+    - efs/enable-at-rest-encryption
+  - title: s3
+    service: s3
+    docs:
+    - s3/block-public-acls
+    - s3/enable-bucket-encryption
+    - s3/enable-bucket-logging
+    - s3/enable-versioning
+    - s3/no-public-access-with-acl
+    - s3/no-public-access-with-acl
+  - title: workspaces
+    service: workspaces
+    docs:
+    - workspaces/enable-disk-encryption
+
+

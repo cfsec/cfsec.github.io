@@ -1,0 +1,1386 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+    <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+            <meta name="viewport" content="width=device-width, initial-scale=1">
+                <!-- Begin Jekyll SEO tag v2.7.1 -->
+<title>Custom Checks | cfsec</title>
+<meta name="generator" content="Jekyll v3.9.0" />
+<meta property="og:title" content="Custom Checks" />
+<meta name="author" content="cfsec" />
+<meta property="og:locale" content="en" />
+<meta name="description" content="What is it? cfsec comes with an ever growing number of built in checks, these cover standard AWS, Azure and GCP provider checks, plus several more." />
+<meta property="og:description" content="What is it? cfsec comes with an ever growing number of built in checks, these cover standard AWS, Azure and GCP provider checks, plus several more." />
+<link rel="canonical" href="http://localhost:4000/docs/custom-checks/" />
+<meta property="og:url" content="http://localhost:4000/docs/custom-checks/" />
+<meta property="og:site_name" content="cfsec" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2021-09-29T13:22:50+01:00" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="Custom Checks" />
+<script type="application/ld+json">
+{"description":"What is it? cfsec comes with an ever growing number of built in checks, these cover standard AWS, Azure and GCP provider checks, plus several more.","@type":"BlogPosting","headline":"Custom Checks","dateModified":"2021-09-29T13:22:50+01:00","datePublished":"2021-09-29T13:22:50+01:00","publisher":{"@type":"Organization","logo":{"@type":"ImageObject","url":"http://localhost:4000/logonav.png"},"name":"cfsec"},"mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/docs/custom-checks/"},"author":{"@type":"Person","name":"cfsec"},"url":"http://localhost:4000/docs/custom-checks/","@context":"https://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+
+                <meta property="og:image" content="http://localhost:4000/uploads/logonav.png"/>
+                <link rel="stylesheet" href="/assets/css/main.css">
+                <link rel="stylesheet" href="/assets/css/syntax.css">
+                    <link rel="shortcut icon" type="image/png" href="/uploads/favicon.ico">
+                        <link rel="alternate" type="application/rss+xml" title="cfsec" href="/feed.xml">
+                            <script src="/assets/js/main.js"></script>
+                            
+                                <script>
+function searchResults(form) {
+
+    var currentItem = null;
+    var search = document.getElementById(form);
+    var results = document.getElementById(form + "-results");
+    var toggle = document.getElementById(form + "-toggle");
+
+    function removeActive() {
+        for (i = 0; i < results.children.length; i++) {
+            results.children[i].classList.remove("uk-background-muted");
+        }
+    }
+
+    // Detect all clicks on the document
+    document.addEventListener("click", function(event) {
+
+        var isClickSearch = false;
+        var isClickResults = false;
+        var isClickSearchToggle = false;
+
+        if (search !== null) {
+            isClickSearch = search.contains(event.target);
+        }
+
+        if (results !== null) {
+            isClickResults = results.contains(event.target);
+        }
+
+        if (toggle !== null) {
+            isClickSearchToggle = toggle.contains(event.target);
+        }
+
+        if (isClickSearch || isClickSearchToggle) {
+            results.style.display = "block";
+        }        
+
+        if (!isClickResults && !isClickSearch && !isClickSearchToggle) {
+            results.style.display = "none";
+        }        
+        
+    });    
+
+    results.addEventListener("mouseover", function(event) {
+
+        removeActive();
+        event.target.parentElement.classList.add("uk-background-muted");
+        currentItem = null;
+
+    });
+
+    results.addEventListener("mouseout", function(event) {
+        event.target.parentElement.classList.remove("uk-background-muted");
+    });
+
+
+    search.addEventListener("keyup", function(event) {
+
+        var resultItems = results.children;
+        var resultCount = results.children.length;
+                                
+        if (event.keyCode === 40) {
+
+            if (currentItem < (resultCount - 1)) {
+                if (currentItem === null) {
+                    currentItem = 0;
+                } else {
+                    removeActive();
+                    currentItem++;
+                }
+                removeActive();
+                resultItems[currentItem].classList.add("uk-background-muted");
+            }
+            
+        } else if (event.keyCode === 38) {
+
+            if (currentItem > 0) {
+                if (currentItem === null) {
+                    currentItem = 0;
+                } else {
+                    removeActive();
+                    currentItem--;
+                }
+                removeActive();
+                resultItems[currentItem].classList.add("uk-background-muted");
+            }
+
+        } else if (event.keyCode === 13) {
+
+            resultItems[currentItem].children[0].click();
+
+        }
+
+    });
+
+}
+</script>
+                            
+                            
+                            
+                            <!-- TrenDemon Code -->
+                            <script type="text/javascript" id="trd-flame-load">
+                                TRD_ACC_ID = 1810;
+                                (function (w, d) {
+                                    function go() {
+                                        var trdti = setInterval(function () {
+                                            if (document.readyState === "complete") {
+                                                var bi = document.createElement("script");
+                                                bi.type = "text/javascript";
+                                                bi.async = true;
+                                                bi.src = "https://assets.trendemon.com/tag/trends.min.js";
+                                                bi.id = "trdflame";
+                                                var s = document.getElementsByTagName("script")[0];
+                                                s.parentNode.insertBefore(bi, s);
+                                                clearInterval(trdti);
+                                            }
+                                        }, 500);
+                                    };
+                                    go();
+                                }(window, document));
+                            </script>
+                            <!-- End of TrenDemon Code -->
+                        </head>
+
+
+    <body>
+
+    
+        <div  data-uk-sticky="animation: uk-animation-slide-top; sel-target: .uk-navbar-container; cls-active: uk-navbar-sticky; cls-inactive: uk-navbar-transparent; top: 200" >
+    <nav class="uk-navbar-container">
+        <div class="uk-container">
+            <div data-uk-navbar>
+                <div class="uk-navbar-left">
+                    <a class="uk-navbar-item uk-logo uk-visible@m" href="/">
+                        
+                            <img src="http://localhost:4000/uploads/logonav.png" width="144px" height="43" alt="cfsec">
+                            
+                        </a>
+                        
+                            <a class="uk-navbar-toggle uk-hidden@m" href="#offcanvas-docs" data-uk-toggle>
+                                <span data-uk-navbar-toggle-icon></span>
+                                <span class="uk-margin-small-left">Docs</span>
+                            </a>
+                        
+
+                        <ul class="uk-navbar-nav uk-visible@m">
+                            
+                                
+                                
+                                
+                                    
+                                        
+                                            <li>
+                                                <a href="/" >Home</a>
+                                            </li>
+                                        
+                                    
+                                
+                            
+                                
+                                
+                                
+                                    
+                                        
+                                            <li>
+                                                <a href="/docs/installation/" >Docs</a>
+                                            </li>
+                                        
+                                    
+                                
+                            
+                                
+                                
+                                
+                                    
+                                        
+                                            <li>
+                                                <a href="/blog/" >Blog</a>
+                                            </li>
+                                        
+                                    
+                                
+                            
+                        </ul>
+                    </div>
+                    <div class="uk-navbar-center uk-hidden@m">
+                        <a class="uk-navbar-item uk-logo" href="/">
+                            
+                                <img src="http://localhost:4000/uploads/logonav.png" alt="cfsec">
+                                
+                            </a>
+                        </div>
+                        <div class="uk-navbar-right">
+                            
+                                
+                                    <div class="uk-visible@m">
+                                        <a id="search-navbar-toggle" class="uk-navbar-toggle" uk-search-icon href="#"></a>
+                                        <div class="uk-drop uk-background-default uk-border-rounded" uk-drop="mode: click; pos: left-center; offset: 0">
+                                            <form class="uk-search uk-search-navbar uk-width-1-1" onsubmit="return false;">
+                                                <input id="search-navbar" class="uk-search-input" type="search" placeholder="Search Checks" autofocus autocomplete="off"></form>
+                                                <ul id="search-navbar-results" class="uk-position-absolute uk-width-1-1 uk-list"></ul>
+                                            </div>
+                                        </div>
+                                        <script>
+                                            SimpleJekyllSearch({
+                                                searchInput: document.getElementById('search-navbar'),
+                                                resultsContainer: document.getElementById('search-navbar-results'),
+                                                noResultsText: '<li class="no-results">    No results found</li>',
+                                                searchResultTemplate: '<li><a href="{url}">{title}</a></li>',
+                                                json: "/search.json"
+                                            });
+                                            searchResults("search-navbar");
+                                        </script>
+                                    
+                                
+
+                                <ul class="uk-navbar-nav uk-visible@m">
+                                    
+                                        
+                                        
+                                        
+                                            
+                                                <li>
+                                                    <div class="uk-navbar-item">
+                                                        <a class="uk-button uk-button-success" href="/contact/" >Contact</a>
+                                                    </div>
+                                                </li>
+                                            
+                                        
+                                    
+                                </ul>
+
+                                
+                                    <a class="uk-navbar-toggle uk-hidden@m" href="#offcanvas" data-uk-toggle>
+                                        <span data-uk-navbar-toggle-icon></span>
+                                        <span class="uk-margin-small-left">Menu</span>
+                                    </a>
+                                
+
+                            </div>
+                        </div>
+                    </div>
+                </nav>
+            </div>
+
+    
+
+    <div class="uk-section">
+    <div class="uk-container">
+        <div class="uk-grid-large" data-uk-grid>
+
+            <div class="sidebar-fixed-width uk-visible@m">
+                <div class="sidebar-docs uk-position-fixed uk-margin-top">
+                    
+                    <h5>Getting Started</h5>
+                    <ul class="uk-nav uk-nav-default doc-nav">
+                        
+    
+                      
+                      
+                      
+                      <li class=""><a href="/docs/installation/">Installation</a></li>
+                    
+                      
+                      
+                      <li class=""><a href="/docs/usage/">Usage</a></li>
+                    
+                    </ul>
+                    
+                    <h5>Services</h5>
+                    <ul class="uk-nav uk-nav-default doc-nav">
+                        
+                        
+                        
+                        
+                        
+                            <li id="api-gateway" class="">api-gateway</li>
+                        <ul class="uk-nav uk-nav-default doc-nav">
+                            
+                            
+                            
+                            <li class=""><a href="/docs/api-gateway/enable-access-logging/#api-gateway">enable-access-logging</a></li>
+                          
+                          </ul>
+                    
+                      
+                        
+                        
+                        
+                        
+                            <li id="athena" class="">athena</li>
+                        <ul class="uk-nav uk-nav-default doc-nav">
+                            
+                            
+                            
+                            <li class=""><a href="/docs/athena/enable-at-rest-encryption/#athena">enable-at-rest-encryption</a></li>
+                          
+                            
+                            
+                            <li class=""><a href="/docs/athena/no-encryption-override/#athena">no-encryption-override</a></li>
+                          
+                          </ul>
+                    
+                      
+                        
+                        
+                        
+                        
+                            <li id="autoscaling" class="">autoscaling</li>
+                        <ul class="uk-nav uk-nav-default doc-nav">
+                            
+                            
+                            
+                            <li class=""><a href="/docs/autoscaling/enable-at-rest-encryption/#autoscaling">enable-at-rest-encryption</a></li>
+                          
+                            
+                            
+                            <li class=""><a href="/docs/autoscaling/no-public-ip/#autoscaling">no-public-ip</a></li>
+                          
+                          </ul>
+                    
+                      
+                        
+                        
+                        
+                        
+                            <li id="cloudfront" class="">cloudfront</li>
+                        <ul class="uk-nav uk-nav-default doc-nav">
+                            
+                            
+                            
+                            <li class=""><a href="/docs/cloudfront/enable-logging/#cloudfront">enable-logging</a></li>
+                          
+                            
+                            
+                            <li class=""><a href="/docs/cloudfront/enable-waf/#cloudfront">enable-waf</a></li>
+                          
+                            
+                            
+                            <li class=""><a href="/docs/cloudfront/enforce-https/#cloudfront">enforce-https</a></li>
+                          
+                            
+                            
+                            <li class=""><a href="/docs/cloudfront/use-secure-tls-policy/#cloudfront">use-secure-tls-policy</a></li>
+                          
+                          </ul>
+                    
+                      
+                        
+                        
+                        
+                        
+                            <li id="cloudtrail" class="">cloudtrail</li>
+                        <ul class="uk-nav uk-nav-default doc-nav">
+                            
+                            
+                            
+                            <li class=""><a href="/docs/cloudtrail/enable-all-regions/#cloudtrail">enable-all-regions</a></li>
+                          
+                            
+                            
+                            <li class=""><a href="/docs/cloudtrail/enable-at-rest-encryption/#cloudtrail">enable-at-rest-encryption</a></li>
+                          
+                            
+                            
+                            <li class=""><a href="/docs/cloudtrail/enable-log-validation/#cloudtrail">enable-log-validation</a></li>
+                          
+                          </ul>
+                    
+                      
+                        
+                        
+                        
+                        
+                            <li id="cloudwatch" class="">cloudwatch</li>
+                        <ul class="uk-nav uk-nav-default doc-nav">
+                            
+                            
+                            
+                            <li class=""><a href="/docs/cloudwatch/log-group-customer-key/#cloudwatch">log-group-customer-key</a></li>
+                          
+                          </ul>
+                    
+                      
+                        
+                        
+                        
+                        
+                            <li id="config" class="">config</li>
+                        <ul class="uk-nav uk-nav-default doc-nav">
+                            
+                            
+                            
+                            <li class=""><a href="/docs/config/aggregate-all-regions/#config">aggregate-all-regions</a></li>
+                          
+                          </ul>
+                    
+                      
+                        
+                        
+                        
+                        
+                            <li id="documentdb" class="">documentdb</li>
+                        <ul class="uk-nav uk-nav-default doc-nav">
+                            
+                            
+                            
+                            <li class=""><a href="/docs/documentdb/enable-log-export/#documentdb">enable-log-export</a></li>
+                          
+                            
+                            
+                            <li class=""><a href="/docs/documentdb/enable-storage-encryption/#documentdb">enable-storage-encryption</a></li>
+                          
+                            
+                            
+                            <li class=""><a href="/docs/documentdb/encryption-customer-key/#documentdb">encryption-customer-key</a></li>
+                          
+                          </ul>
+                    
+                      
+                        
+                        
+                        
+                        
+                            <li id="ebs" class="">ebs</li>
+                        <ul class="uk-nav uk-nav-default doc-nav">
+                            
+                            
+                            
+                            <li class=""><a href="/docs/ebs/enable-volume-encryption/#ebs">enable-volume-encryption</a></li>
+                          
+                            
+                            
+                            <li class=""><a href="/docs/ebs/encryption-customer-key/#ebs">encryption-customer-key</a></li>
+                          
+                          </ul>
+                    
+                      
+                        
+                        
+                        
+                        
+                            <li id="ec2" class="">ec2</li>
+                        <ul class="uk-nav uk-nav-default doc-nav">
+                            
+                            
+                            
+                            <li class=""><a href="/docs/ec2/no-secrets-in-user-data/#ec2">no-secrets-in-user-data</a></li>
+                          
+                          </ul>
+                    
+                      
+                        
+                        
+                        
+                        
+                            <li id="ecr" class="">ecr</li>
+                        <ul class="uk-nav uk-nav-default doc-nav">
+                            
+                            
+                            
+                            <li class=""><a href="/docs/ecr/enable-image-scans/#ecr">enable-image-scans</a></li>
+                          
+                            
+                            
+                            <li class=""><a href="/docs/ecr/enforce-immutable-repository/#ecr">enforce-immutable-repository</a></li>
+                          
+                            
+                            
+                            <li class=""><a href="/docs/ecr/no-public-access/#ecr">no-public-access</a></li>
+                          
+                            
+                            
+                            <li class=""><a href="/docs/ecr/repository-customer-key/#ecr">repository-customer-key</a></li>
+                          
+                          </ul>
+                    
+                      
+                        
+                        
+                        
+                        
+                            <li id="ecs" class="">ecs</li>
+                        <ul class="uk-nav uk-nav-default doc-nav">
+                            
+                            
+                            
+                            <li class=""><a href="/docs/ecs/enable-container-insight/#ecs">enable-container-insight</a></li>
+                          
+                            
+                            
+                            <li class=""><a href="/docs/ecs/enable-in-transit-encryption/#ecs">enable-in-transit-encryption</a></li>
+                          
+                            
+                            
+                            <li class=""><a href="/docs/ecs/no-plaintext-secrets/#ecs">no-plaintext-secrets</a></li>
+                          
+                          </ul>
+                    
+                      
+                        
+                        
+                        
+                        
+                            <li id="efs" class="">efs</li>
+                        <ul class="uk-nav uk-nav-default doc-nav">
+                            
+                            
+                            
+                            <li class=""><a href="/docs/efs/enable-at-rest-encryption/#efs">enable-at-rest-encryption</a></li>
+                          
+                          </ul>
+                    
+                      
+                        
+                        
+                        
+                        
+                            <li id="s3" class="">s3</li>
+                        <ul class="uk-nav uk-nav-default doc-nav">
+                            
+                            
+                            
+                            <li class=""><a href="/docs/s3/block-public-acls/#s3">block-public-acls</a></li>
+                          
+                            
+                            
+                            <li class=""><a href="/docs/s3/enable-bucket-encryption/#s3">enable-bucket-encryption</a></li>
+                          
+                            
+                            
+                            <li class=""><a href="/docs/s3/enable-bucket-logging/#s3">enable-bucket-logging</a></li>
+                          
+                            
+                            
+                            <li class=""><a href="/docs/s3/enable-versioning/#s3">enable-versioning</a></li>
+                          
+                            
+                            
+                            <li class=""><a href="/docs/s3/no-public-access-with-acl/#s3">no-public-access-with-acl</a></li>
+                          
+                            
+                            
+                            <li class=""><a href="/docs/s3/no-public-access-with-acl/#s3">no-public-access-with-acl</a></li>
+                          
+                          </ul>
+                    
+                      
+                        
+                        
+                        
+                        
+                            <li id="workspaces" class="">workspaces</li>
+                        <ul class="uk-nav uk-nav-default doc-nav">
+                            
+                            
+                            
+                            <li class=""><a href="/docs/workspaces/enable-disk-encryption/#workspaces">enable-disk-encryption</a></li>
+                          
+                          </ul>
+                    
+                      
+    
+                      
+                    </ul>
+                    
+                </div>
+            </div>
+
+            <div class="uk-width-1-1 uk-width-expand@m">
+
+                <article class="uk-article">
+
+                    <h1 class="uk-article-title">Custom Checks</h1>
+
+                    <div class="uk-article-meta uk-margin-top uk-margin-medium-bottom uk-flex uk-flex-middle">
+                        
+
+
+
+    <div>
+        
+            
+                <br>
+                    
+                        Written by
+
+                        <span itemprop="author" itemscope itemtype="http://schema.org/Person">
+                            <span itemprop="name">cfsec</span>
+                        </span>
+                        <br>
+                        
+                        <time datetime="2021-09-29T13:22:50+01:00" itemprop="datePublished">
+                            
+                            Sep 29, 2021
+                        </time>
+                    </div>
+
+                    </div>
+
+                    <div class="article-content link-primary">
+                        <h2 id="what-is-it">What is it?</h2>
+<p>cfsec comes with an ever growing number of built in checks, these cover standard AWS, Azure and GCP provider checks, plus several more.</p>
+
+<p>We recognise that there are checks that need performing for an organisation that don’t fit with general use cases; for this, there are custom checks.</p>
+
+<p>Custom checks offer an accessible approach to injecting checks that satisfy your organisations compliance and security needs. For example, if you require that all EC2 instances have a <code class="language-plaintext highlighter-rouge">CostCentre</code> tag, that can be achieved with a <code class="language-plaintext highlighter-rouge">custom_check</code>.</p>
+
+<h2 id="how-does-it-work">How does it work?</h2>
+<p>Custom checks are defined as json files which sit in the <code class="language-plaintext highlighter-rouge">.cfsec</code> folder in the root check path. any file with the suffix <code class="language-plaintext highlighter-rouge">_tfchecks.json</code> or <code class="language-plaintext highlighter-rouge">_tfchecks.yaml</code> will be parsed and the checks included during the run.</p>
+
+<h3 id="overriding-check-directory">Overriding check directory</h3>
+<p>The default location for custom checks can be overridden, this is done using the <code class="language-plaintext highlighter-rouge">--custom-check-dir</code> to specify another location to load the checks from instead.
+This is useful when global checks are to applied to the Cloudformation under test.</p>
+
+<h3 id="what-does-a-check-file-look-like">What does a check file look like?</h3>
+<p>Check files are simply json, this ensures that checks can be put together without requiring Go knowledge or being able to build a new release of cfsec to include your custom code.</p>
+
+<p>Taking the previous example of a required cost centre, the check file might look something like</p>
+
+<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"checks"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"CUS001"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Custom check to ensure the CostCentre tag is applied to EC2 instances"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"impact"</span><span class="p">:</span><span class="w"> </span><span class="s2">"By not having CostCentre we can't keep track of billing"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"resolution"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Add the CostCentre tag"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"requiredTypes"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+        </span><span class="s2">"resource"</span><span class="w">
+      </span><span class="p">],</span><span class="w">
+      </span><span class="nl">"requiredLabels"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+        </span><span class="s2">"aws_instance"</span><span class="w">
+      </span><span class="p">],</span><span class="w">
+      </span><span class="nl">"severity"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ERROR"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"matchSpec"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"tags"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"action"</span><span class="p">:</span><span class="w"> </span><span class="s2">"contains"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"value"</span><span class="p">:</span><span class="w"> </span><span class="s2">"CostCentre"</span><span class="w">
+      </span><span class="p">},</span><span class="w">
+      </span><span class="nl">"errorMessage"</span><span class="p">:</span><span class="w"> </span><span class="s2">"The required CostCentre tag was missing"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"relatedLinks"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+        </span><span class="s2">"http://internal.acmecorp.com/standards/aws/tagging.html"</span><span class="w">
+      </span><span class="p">]</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">]</span><span class="w">   
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div></div>
+
+<p>or</p>
+
+<div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nn">---</span>
+<span class="na">checks</span><span class="pi">:</span>
+<span class="pi">-</span> <span class="na">code</span><span class="pi">:</span> <span class="s">CUS001</span>
+  <span class="na">description</span><span class="pi">:</span> <span class="s">Custom check to ensure the CostCentre tag is applied to EC2 instances</span>
+  <span class="na">impact</span><span class="pi">:</span> <span class="s">By not having CostCentre we can't keep track of billing</span>
+  <span class="na">resolution</span><span class="pi">:</span> <span class="s">Add the CostCentre tag</span>
+  <span class="na">requiredTypes</span><span class="pi">:</span>
+  <span class="pi">-</span> <span class="s">resource</span>
+  <span class="na">requiredLabels</span><span class="pi">:</span>
+  <span class="pi">-</span> <span class="s">aws_instance</span>
+  <span class="na">severity</span><span class="pi">:</span> <span class="s">ERROR</span>
+  <span class="na">matchSpec</span><span class="pi">:</span>
+    <span class="na">name</span><span class="pi">:</span> <span class="s">tags</span>
+    <span class="na">action</span><span class="pi">:</span> <span class="s">contains</span>
+    <span class="na">value</span><span class="pi">:</span> <span class="s">CostCentre</span>
+  <span class="na">errorMessage</span><span class="pi">:</span> <span class="s">The required CostCentre tag was missing</span>
+  <span class="na">relatedLinks</span><span class="pi">:</span>
+  <span class="pi">-</span> <span class="s">http://internal.acmecorp.com/standards/aws/tagging.html</span>
+
+</code></pre></div></div>
+
+<p>The check contains up of the following attributes;</p>
+
+<table>
+  <thead>
+    <tr>
+      <th style="text-align: left">Attribute</th>
+      <th style="text-align: left">Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align: left">code</td>
+      <td style="text-align: left">The custom code that your check will be known as</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">description</td>
+      <td style="text-align: left">A description for the code that will be included in the output</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">impact</td>
+      <td style="text-align: left">An optional detail about the consequences of not passing the check</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">resolution</td>
+      <td style="text-align: left">An optional brief description of how to satisfy the check</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">requiredTypes</td>
+      <td style="text-align: left">The block types to apply the check to - resource, data, module, variable</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">requiredLabels</td>
+      <td style="text-align: left">The resource type - aws_ec2_instance for example. This also supports wildcards using <code class="language-plaintext highlighter-rouge">*</code>, e.g. <code class="language-plaintext highlighter-rouge">aws_*</code></td>
+    </tr>
+    <tr>
+      <td style="text-align: left">severity</td>
+      <td style="text-align: left">How severe is the check</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">matchSpec</td>
+      <td style="text-align: left">See below for the MatchSpec attributes</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">errorMessage</td>
+      <td style="text-align: left">The error message that should be displayed in cases where the check fails</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">relatedLinks</td>
+      <td style="text-align: left">A list of related links for the check to be displayed in cases where the check fails</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>The <code class="language-plaintext highlighter-rouge">MatchSpec</code> is the what will define the check itself - this is fairly basic and is made up of the following attributes</p>
+
+<table>
+  <thead>
+    <tr>
+      <th style="text-align: left">Attribute</th>
+      <th style="text-align: left">Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align: left">name</td>
+      <td style="text-align: left">The name of the attribute or block to run the check on</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">action</td>
+      <td style="text-align: left">The check type - see below for more information</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">value</td>
+      <td style="text-align: left">In cases where a value is required, the value to look for</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">ignoreUndefined</td>
+      <td style="text-align: left">If the attribute is undefined, ignore and pass the check</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">subMatch</td>
+      <td style="text-align: left">A sub MatchSpec block for nested checking - think looking for <code class="language-plaintext highlighter-rouge">enabled</code> value in a <code class="language-plaintext highlighter-rouge">logging</code> block</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">predicateMatchSpec</td>
+      <td style="text-align: left">An array of MatchSpec blocks to be logically aggregated by either <code class="language-plaintext highlighter-rouge">and</code> or <code class="language-plaintext highlighter-rouge">or</code> actions</td>
+    </tr>
+  </tbody>
+</table>
+
+<h4 id="check-actions">Check Actions</h4>
+<p>There are a number of <code class="language-plaintext highlighter-rouge">CheckActions</code> available which should allow you to quickly put together most checks.</p>
+
+<h5 id="inmodule">inModule</h5>
+<p>The <code class="language-plaintext highlighter-rouge">inModule</code> check action passes if the resource block is a component of a module. For example, if you’re looking to check that an <code class="language-plaintext highlighter-rouge">aws_s3_bucket</code> is only created using a custom module, you could use the following <code class="language-plaintext highlighter-rouge">MatchSpec</code>;</p>
+
+<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nl">"matchSpec"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+  </span><span class="nl">"action"</span><span class="p">:</span><span class="w"> </span><span class="s2">"inModule"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div></div>
+
+<div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="na">matchSpec</span><span class="pi">:</span>
+  <span class="na">action</span><span class="pi">:</span> <span class="s">inModule</span>
+</code></pre></div></div>
+
+<h5 id="ispresent">isPresent</h5>
+<p>The <code class="language-plaintext highlighter-rouge">isPresent</code> check action passes if the required block or attribute is available in the checked block. For example, if you’re looking to check that an <code class="language-plaintext highlighter-rouge">acl</code> is provided and don’t care what it is, you can use the following <code class="language-plaintext highlighter-rouge">MatchSpec</code>;</p>
+
+<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nl">"matchSpec"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+  </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"acl"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"action"</span><span class="p">:</span><span class="w"> </span><span class="s2">"isPresent"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div></div>
+
+<div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="na">matchSpec</span><span class="pi">:</span>
+  <span class="na">name</span><span class="pi">:</span> <span class="s">acl</span>
+  <span class="na">action</span><span class="pi">:</span> <span class="s">isPresent</span>
+</code></pre></div></div>
+
+<h5 id="notpresent">notPresent</h5>
+<p>Conversely, the <code class="language-plaintext highlighter-rouge">noPresent</code> check action passes if the specified block or attribute is not found in the checked block. For example, if you explicitly don’t want an <code class="language-plaintext highlighter-rouge">acl</code> attribute to be present hou can use the following <code class="language-plaintext highlighter-rouge">MatchSpec</code></p>
+
+<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nl">"matchSpec"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+  </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"acl"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"action"</span><span class="p">:</span><span class="w"> </span><span class="s2">"notPresent"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div></div>
+
+<div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="na">matchSpec</span><span class="pi">:</span>
+  <span class="na">name</span><span class="pi">:</span> <span class="s">acl</span>
+  <span class="na">action</span><span class="pi">:</span> <span class="s">notPresent</span>
+</code></pre></div></div>
+
+<h5 id="isempty">isEmpty</h5>
+<p>The <code class="language-plaintext highlighter-rouge">isEmpty</code> check action passes if the named block or attribute is defined by empty.
+For example, to check that there are not tags you might use the following <code class="language-plaintext highlighter-rouge">MatchSpec</code></p>
+
+<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nl">"matchSpec"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+  </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"tags"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"action"</span><span class="p">:</span><span class="w"> </span><span class="s2">"isEmpty"</span><span class="p">,</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div></div>
+
+<div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="na">matchSpec</span><span class="pi">:</span>
+  <span class="na">name</span><span class="pi">:</span> <span class="s">acl</span>
+  <span class="na">action</span><span class="pi">:</span> <span class="s">isEmpty</span>
+</code></pre></div></div>
+
+<h5 id="startswith">startsWith</h5>
+<p>The <code class="language-plaintext highlighter-rouge">startsWith</code> check action passes if the checked attribute string starts with the specified value. For example, to check that <code class="language-plaintext highlighter-rouge">acl</code> begins with <code class="language-plaintext highlighter-rouge">public</code> you could use the following <code class="language-plaintext highlighter-rouge">MatchSpec</code></p>
+
+<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nl">"matchSpec"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+  </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"acl"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"action"</span><span class="p">:</span><span class="w"> </span><span class="s2">"startsWith"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"value"</span><span class="p">:</span><span class="w"> </span><span class="s2">"public"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div></div>
+
+<div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="na">matchSpec</span><span class="pi">:</span>
+  <span class="na">name</span><span class="pi">:</span> <span class="s">acl</span>
+  <span class="na">action</span><span class="pi">:</span> <span class="s">startsWith</span>
+  <span class="na">value</span><span class="pi">:</span> <span class="s">public</span>
+</code></pre></div></div>
+
+<h5 id="endswith">endsWith</h5>
+<p>The <code class="language-plaintext highlighter-rouge">endsWith</code> check action passes if the checked attribute string ends with the specified value. For example, to check that <code class="language-plaintext highlighter-rouge">acl</code> ends with <code class="language-plaintext highlighter-rouge">read</code> you could use the following <code class="language-plaintext highlighter-rouge">MatchSpec</code>;</p>
+
+<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nl">"matchSpec"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+  </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"acl"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"action"</span><span class="p">:</span><span class="w"> </span><span class="s2">"endsWith"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"value"</span><span class="p">:</span><span class="w"> </span><span class="s2">"-read"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div></div>
+
+<div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="na">matchSpec</span><span class="pi">:</span>
+  <span class="na">name</span><span class="pi">:</span> <span class="s">acl</span>
+  <span class="na">action</span><span class="pi">:</span> <span class="s">endsWith</span>
+  <span class="na">value</span><span class="pi">:</span> <span class="s">-read</span>
+</code></pre></div></div>
+
+<h5 id="contains">contains</h5>
+<p>The <code class="language-plaintext highlighter-rouge">contains</code> check action will change depending on the attribute or block it is applied to. If the check is against a string attribute, it will look for the <code class="language-plaintext highlighter-rouge">MatchSpec</code> value in the attribute. If the check is against a list, it will pass if the value item can be found in the list.</p>
+
+<p>If the attribute is an <code class="language-plaintext highlighter-rouge">object</code> or <code class="language-plaintext highlighter-rouge">map</code> it will pass if a key can be found that matches the <code class="language-plaintext highlighter-rouge">MatchSpec</code> value.</p>
+
+<p>For example, if you want to ensure that the <code class="language-plaintext highlighter-rouge">CostCentre</code> exists, you might use the following <code class="language-plaintext highlighter-rouge">MatchSpec</code>;</p>
+
+<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nl">"matchSpec"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+  </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"tags"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"action"</span><span class="p">:</span><span class="w"> </span><span class="s2">"contains"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"value"</span><span class="p">:</span><span class="w"> </span><span class="s2">"CostCentre"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div></div>
+
+<div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="na">matchSpec</span><span class="pi">:</span>
+  <span class="na">name</span><span class="pi">:</span> <span class="s">tags</span>
+  <span class="na">action</span><span class="pi">:</span> <span class="s">contains</span>
+  <span class="na">value</span><span class="pi">:</span> <span class="s">CostCentre</span>
+</code></pre></div></div>
+
+<h5 id="notcontains">notContains</h5>
+<p>The <code class="language-plaintext highlighter-rouge">notContains</code> check action will change depending on the attribute or block it is applied to. If the check is against a string attribute, it will look for the <code class="language-plaintext highlighter-rouge">MatchSpec</code> value in the attribute. If the check is against a list, it will pass if the value item can be found in the list.</p>
+
+<p>If the attribute is an <code class="language-plaintext highlighter-rouge">object</code> or <code class="language-plaintext highlighter-rouge">map</code> it will pass if a key can be found that matches the <code class="language-plaintext highlighter-rouge">MatchSpec</code> value.</p>
+
+<p>For example, you want to make sure that an <code class="language-plaintext highlighter-rouge">action</code> does not contain <code class="language-plaintext highlighter-rouge">kms:*</code> you might use the following <code class="language-plaintext highlighter-rouge">MatchSpec</code>:</p>
+
+<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nl">"matchSpec"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+  </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"action"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"action"</span><span class="p">:</span><span class="w"> </span><span class="s2">"notContains"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"value"</span><span class="p">:</span><span class="w"> </span><span class="s2">"kms:*"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div></div>
+
+<div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="na">matchSpec</span><span class="pi">:</span>
+  <span class="na">name</span><span class="pi">:</span> <span class="s">tags</span>
+  <span class="na">action</span><span class="pi">:</span> <span class="s">notContains</span>
+  <span class="na">value</span><span class="pi">:</span> <span class="s">kms:*</span>
+</code></pre></div></div>
+
+<h5 id="equals">equals</h5>
+<p>The <code class="language-plaintext highlighter-rouge">equals</code> check action passes if the checked attribute equals specified value. 
+The core primitive types are supported, if the subject attribute is a Boolean, the <code class="language-plaintext highlighter-rouge">MatchSpec</code> value will attempt to be cast to a Boolean for comparison.
+For example, to check that <code class="language-plaintext highlighter-rouge">acl</code> begins with <code class="language-plaintext highlighter-rouge">private</code> you could use the following <code class="language-plaintext highlighter-rouge">MatchSpec</code>;</p>
+
+<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nl">"matchSpec"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+  </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"acl"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"action"</span><span class="p">:</span><span class="w"> </span><span class="s2">"equals"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"value"</span><span class="p">:</span><span class="w"> </span><span class="s2">"private"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div></div>
+
+<div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="na">matchSpec</span><span class="pi">:</span>
+  <span class="na">name</span><span class="pi">:</span> <span class="s">acl</span>
+  <span class="na">action</span><span class="pi">:</span> <span class="s">equals</span>
+  <span class="na">value</span><span class="pi">:</span> <span class="s">private</span>
+</code></pre></div></div>
+
+<h5 id="lessthan">lessThan</h5>
+<p>The <code class="language-plaintext highlighter-rouge">lessThan</code> check action passes if the checked attribute is numerical and the value is less than the specified value.
+For example, if you want to ensure that the <code class="language-plaintext highlighter-rouge">cpu_core_count</code> is less than 8, you might use the following <code class="language-plaintext highlighter-rouge">MatchSpec</code></p>
+
+<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nl">"matchSpec"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+  </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"cpu_core_count"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"action"</span><span class="p">:</span><span class="w"> </span><span class="s2">"lessThan"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"value"</span><span class="p">:</span><span class="w"> </span><span class="mi">8</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div></div>
+
+<div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="na">matchSpec</span><span class="pi">:</span>
+  <span class="na">name</span><span class="pi">:</span> <span class="s">cpu_core_count</span>
+  <span class="na">action</span><span class="pi">:</span> <span class="s">lessThan</span>
+  <span class="na">value</span><span class="pi">:</span> <span class="m">8</span>
+</code></pre></div></div>
+
+<h5 id="lessthanorequalto">lessThanOrEqualTo</h5>
+<p>The <code class="language-plaintext highlighter-rouge">lessThanOrEqualTo</code> check action passes if the checked attribute is numerical and the value is less than or equal tothe specified value.
+For example, if you want to ensure that the <code class="language-plaintext highlighter-rouge">cpu_core_count</code> is less than or equal to 4, you might use the following <code class="language-plaintext highlighter-rouge">MatchSpec</code></p>
+
+<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nl">"matchSpec"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+  </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"cpu_core_count"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"action"</span><span class="p">:</span><span class="w"> </span><span class="s2">"lessThanOrEqualTo"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"value"</span><span class="p">:</span><span class="w"> </span><span class="mi">4</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div></div>
+
+<div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="na">matchSpec</span><span class="pi">:</span>
+  <span class="na">name</span><span class="pi">:</span> <span class="s">cpu_core_count</span>
+  <span class="na">action</span><span class="pi">:</span> <span class="s">lessThanOrEqualTo</span>
+  <span class="na">value</span><span class="pi">:</span> <span class="m">4</span>
+</code></pre></div></div>
+
+<h5 id="greaterthan">greaterThan</h5>
+<p>The <code class="language-plaintext highlighter-rouge">greaterThan</code> check action passes if the checked attribute is numerical and the value is greater than the specified value.
+For example, if you want to ensure that the <code class="language-plaintext highlighter-rouge">cpu_core_count</code> is greater than 2, you might use the following <code class="language-plaintext highlighter-rouge">MatchSpec</code></p>
+
+<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nl">"matchSpec"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+  </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"cpu_core_count"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"action"</span><span class="p">:</span><span class="w"> </span><span class="s2">"greaterThan"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"value"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div></div>
+
+<div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="na">matchSpec</span><span class="pi">:</span>
+  <span class="na">name</span><span class="pi">:</span> <span class="s">cpu_core_count</span>
+  <span class="na">action</span><span class="pi">:</span> <span class="s">greaterThan</span>
+  <span class="na">value</span><span class="pi">:</span> <span class="m">2</span>
+</code></pre></div></div>
+
+<h5 id="greaterthanorequalto">greaterThanOrEqualTo</h5>
+<p>The <code class="language-plaintext highlighter-rouge">greaterThanOrEqualTo</code> check action passes if the checked attribute is numerical and the value is greater than or equal tothe specified value.
+For example, if you want to ensure that the <code class="language-plaintext highlighter-rouge">cpu_core_count</code> is greater than or equal to 4, you might use the following <code class="language-plaintext highlighter-rouge">MatchSpec</code></p>
+
+<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nl">"matchSpec"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+  </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"cpu_core_count"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"action"</span><span class="p">:</span><span class="w"> </span><span class="s2">"greaterThanOrEqualTo"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"value"</span><span class="p">:</span><span class="w"> </span><span class="mi">4</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div></div>
+
+<div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="na">matchSpec</span><span class="pi">:</span>
+  <span class="na">name</span><span class="pi">:</span> <span class="s">cpu_core_count</span>
+  <span class="na">action</span><span class="pi">:</span> <span class="s">greaterThanOrEqualTo</span>
+  <span class="na">value</span><span class="pi">:</span> <span class="m">4</span>
+</code></pre></div></div>
+
+<h5 id="regexmatches">regexMatches</h5>
+<p>The <code class="language-plaintext highlighter-rouge">regexMatches</code> check action passes when the regex is matched to the pattern passed in the value. This is check would generally be used as a top level check to filter whether or not to apply a check.</p>
+
+<p>For example, this check will ensure that the source attribute of a module matches the supplied regex before continuing with the subMatches. This can be used to ensure that checks are targeted to specific modules.</p>
+
+<p>When tackling this specific use case of filtering module blocks by source, the <code class="language-plaintext highlighter-rouge">requiredLabels</code> should be set to <code class="language-plaintext highlighter-rouge">"*"</code></p>
+
+<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="w">    </span><span class="nl">"matchSpec"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"source"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"action"</span><span class="p">:</span><span class="w"> </span><span class="s2">"regexMatches"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"value"</span><span class="p">:</span><span class="w"> </span><span class="s2">"^modules</span><span class="se">\\</span><span class="s2">/.*public_.+bucket$"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"subMatch"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+          </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"acl"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"action"</span><span class="p">:</span><span class="w"> </span><span class="s2">"equals"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"value"</span><span class="p">:</span><span class="w"> </span><span class="s2">"public-read"</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+      </span><span class="p">}</span><span class="w">
+</span></code></pre></div></div>
+
+<div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="na">matchSpec</span><span class="pi">:</span>
+  <span class="na">name</span><span class="pi">:</span> <span class="s">source</span>
+  <span class="na">action</span><span class="pi">:</span> <span class="s">regexMatches</span>
+  <span class="na">value</span><span class="pi">:</span> <span class="s2">"</span><span class="s">^modules</span><span class="se">\\</span><span class="s">/.*public_.+bucket$"</span>
+  <span class="na">subMatch</span><span class="pi">:</span>
+    <span class="na">name</span><span class="pi">:</span> <span class="s">acl</span>
+    <span class="na">action</span><span class="pi">:</span> <span class="s">equals</span>
+    <span class="na">value</span><span class="pi">:</span> <span class="s">public-read</span>
+
+</code></pre></div></div>
+
+<h5 id="isany">isAny</h5>
+<p>The <code class="language-plaintext highlighter-rouge">isAny</code> check action passes when the attribute value can be found in the slice passed as the check value. This check action supports strings and numbers</p>
+
+<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nl">"matchSpec"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+  </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"acl"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"action"</span><span class="p">:</span><span class="w"> </span><span class="s2">"isAny"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"value"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">"private"</span><span class="p">,</span><span class="w"> </span><span class="s2">"log-delivery-write"</span><span class="p">]</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div></div>
+
+<div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="na">matchSpec</span><span class="pi">:</span>
+  <span class="na">name</span><span class="pi">:</span> <span class="s">acl</span>
+  <span class="na">action</span><span class="pi">:</span> <span class="s">isAny</span>
+  <span class="na">value</span><span class="pi">:</span>
+  <span class="pi">-</span> <span class="s">private</span>
+  <span class="pi">-</span> <span class="s">log-delivery-write</span>
+</code></pre></div></div>
+
+<h5 id="isnone">isNone</h5>
+<p>The <code class="language-plaintext highlighter-rouge">isNone</code> check action passes when the attribute value cannot be found in the slice passed as the check value. This check action supports strings and numbers</p>
+
+<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nl">"matchSpec"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+  </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"acl"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"action"</span><span class="p">:</span><span class="w"> </span><span class="s2">"isNone"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"value"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">"authenticated-read"</span><span class="p">,</span><span class="w"> </span><span class="s2">"public-read"</span><span class="p">]</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div></div>
+
+<div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="na">matchSpec</span><span class="pi">:</span>
+  <span class="na">name</span><span class="pi">:</span> <span class="s">acl</span>
+  <span class="na">action</span><span class="pi">:</span> <span class="s">isNone</span>
+  <span class="na">value</span><span class="pi">:</span>
+  <span class="pi">-</span> <span class="s">authenticated-read</span>
+  <span class="pi">-</span> <span class="s">public-read</span>
+</code></pre></div></div>
+
+<h5 id="requirespresence">requiresPresence</h5>
+<p>The <code class="language-plaintext highlighter-rouge">requiresPresence</code> checks that the resouce in <code class="language-plaintext highlighter-rouge">name</code> is also present in the Cloudformation code.</p>
+
+<p>If you wanted to ensure that <code class="language-plaintext highlighter-rouge">aws_vpc_flowlogs</code> is present if there is a <code class="language-plaintext highlighter-rouge">aws_vpc</code>, you might use the following <code class="language-plaintext highlighter-rouge">matchSpec</code>:</p>
+
+<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nl">"matchSpec"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+  </span><span class="nl">"action"</span><span class="p">:</span><span class="w"> </span><span class="s2">"requiresPresence"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"aws_vpc_flowlogs"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div></div>
+
+<div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="na">matchSpec</span><span class="pi">:</span>
+  <span class="na">name</span><span class="pi">:</span> <span class="s">aws_vpc_flowlogs</span>
+  <span class="na">action</span><span class="pi">:</span> <span class="s">requiresPresence</span>
+</code></pre></div></div>
+
+<h5 id="and">and</h5>
+<p>The <code class="language-plaintext highlighter-rouge">and</code> check action passes when all the blocks provided within <code class="language-plaintext highlighter-rouge">predicateMatchSpec</code> evaluate to <code class="language-plaintext highlighter-rouge">true</code>. This action
+can be combined with <code class="language-plaintext highlighter-rouge">subMatch</code> to perform composite checks against the contents of nested blocks.</p>
+
+<p>Note that <code class="language-plaintext highlighter-rouge">or</code> and <code class="language-plaintext highlighter-rouge">and</code> actions can be nested as many times as needed.</p>
+
+<p>If you wanted to ensure that <code class="language-plaintext highlighter-rouge">device_name</code> and <code class="language-plaintext highlighter-rouge">encrypted</code> are both present in a nested <code class="language-plaintext highlighter-rouge">ebs_block_device</code> block,
+you might use the following <code class="language-plaintext highlighter-rouge">matchSpec</code>:</p>
+
+<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nl">"matchSpec"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+  </span><span class="nl">"action"</span><span class="p">:</span><span class="w"> </span><span class="s2">"isPresent"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ebs_block_device"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"subMatch"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"action"</span><span class="p">:</span><span class="w"> </span><span class="s2">"and"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"predicateMatchSpec"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+      </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"action"</span><span class="p">:</span><span class="w"> </span><span class="s2">"isPresent"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"device_name"</span><span class="w">      
+      </span><span class="p">},</span><span class="w">
+      </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"action"</span><span class="p">:</span><span class="w"> </span><span class="s2">"isPresent"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"encrypted"</span><span class="w">
+      </span><span class="p">}</span><span class="w">
+    </span><span class="p">]</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div></div>
+
+<div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="na">matchSpec</span><span class="pi">:</span>
+  <span class="na">action</span><span class="pi">:</span> <span class="s">isPresent</span>
+  <span class="na">name</span><span class="pi">:</span> <span class="s">ebs_block_device</span>
+  <span class="na">subMatch </span><span class="pi">:</span> 
+    <span class="na">action </span><span class="pi">:</span> <span class="s">and</span>
+    <span class="na">predicateMatchSpec </span><span class="pi">:</span>
+      <span class="pi">-</span> <span class="na">action </span><span class="pi">:</span> <span class="s">isPresent</span>
+        <span class="na">name </span><span class="pi">:</span> <span class="s">device_name</span>
+      <span class="pi">-</span> <span class="na">action </span><span class="pi">:</span> <span class="s">isPresent</span>
+        <span class="na">name </span><span class="pi">:</span> <span class="s">encrypted</span> 
+</code></pre></div></div>
+
+<h5 id="or">or</h5>
+<p>The <code class="language-plaintext highlighter-rouge">or</code> check action passes when at least one of the blocks provided within <code class="language-plaintext highlighter-rouge">predicateMatchSpec</code> evaluates to <code class="language-plaintext highlighter-rouge">true</code>.
+This action can be combined with <code class="language-plaintext highlighter-rouge">subMatch</code> to perform composite checks against the contents of nested blocks.</p>
+
+<p>Note that <code class="language-plaintext highlighter-rouge">or</code> and <code class="language-plaintext highlighter-rouge">and</code> actions can be nested as many times as needed.</p>
+
+<p>If you want to ensure that <code class="language-plaintext highlighter-rouge">virtualization_type</code> is assigned to either <code class="language-plaintext highlighter-rouge">hvm</code> or <code class="language-plaintext highlighter-rouge">paravirtual</code>, while enforcing
+that their implicitly linked required attributes are also present, you might use the following <code class="language-plaintext highlighter-rouge">matchSpec</code>:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>"matchSpec": {
+  "action": "or",
+  "predicateMatchSpec": [
+    {
+      "action": "and",
+      "predicateMatchSpec": [
+        {
+          "name": "virtualization_type",
+          "action": "equals",
+          "value": "hvm"
+        }
+      ]
+    },
+    {
+      "action": "and",
+      "predicateMatchSpec": [
+        {
+          "name": "virtualization_type",
+          "action": "equals",
+          "value": "paravirtual"
+        },
+        {
+          "name": "image_location",
+          "action": "isPresent"
+        },
+        {
+          "name": "kernel_id",
+          "action": "isPresent"
+        }
+      ]
+    }
+  ]
+}
+</code></pre></div></div>
+
+<div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="na">matchSpec</span><span class="pi">:</span>
+  <span class="na">action</span><span class="pi">:</span> <span class="s">or</span>
+  <span class="na">predicateMatchSpec</span><span class="pi">:</span>
+    <span class="pi">-</span> <span class="na">action</span><span class="pi">:</span> <span class="s">and</span>
+      <span class="na">predicateMatchSpec</span><span class="pi">:</span>
+        <span class="pi">-</span> <span class="na">name</span><span class="pi">:</span> <span class="s">virtualization_type</span>
+          <span class="na">action</span><span class="pi">:</span> <span class="s">equals</span>
+          <span class="na">value</span><span class="pi">:</span> <span class="s">hvm</span>
+        <span class="pi">-</span> <span class="na">name</span><span class="pi">:</span> <span class="s">sriov_net_support</span>
+          <span class="na">action</span><span class="pi">:</span> <span class="s">isPresent</span>
+    <span class="pi">-</span> <span class="na">action</span><span class="pi">:</span> <span class="s">and</span>
+      <span class="na">predicateMatchSpec</span><span class="pi">:</span>
+        <span class="pi">-</span> <span class="na">name</span><span class="pi">:</span> <span class="s">virtualization_type</span>
+          <span class="na">action</span><span class="pi">:</span> <span class="s">equals</span>
+          <span class="na">value</span><span class="pi">:</span> <span class="s">paravirtual</span>
+        <span class="pi">-</span> <span class="na">name</span><span class="pi">:</span> <span class="s">image_location</span>
+          <span class="na">action</span><span class="pi">:</span> <span class="s">isPresent</span>
+        <span class="pi">-</span> <span class="na">name</span><span class="pi">:</span> <span class="s">kernel_id</span>
+          <span class="na">action</span><span class="pi">:</span> <span class="s">isPresent</span>
+</code></pre></div></div>
+<h5 id="not">not</h5>
+<p>The <code class="language-plaintext highlighter-rouge">not</code> check action passes when the <code class="language-plaintext highlighter-rouge">predicateMatchSpec</code> evaluates to <code class="language-plaintext highlighter-rouge">false</code>.</p>
+
+<p>As an example, if you want to represent that a <code class="language-plaintext highlighter-rouge">resource</code> should not be included <code class="language-plaintext highlighter-rouge">inModule</code> you might use the following <code class="language-plaintext highlighter-rouge">matchSpec</code>:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>"matchSpec": {
+  "action": "not",
+  "predicateMatchSpec": [
+    {
+        "action": "inModule" 
+    }
+  ]
+}
+</code></pre></div></div>
+
+<div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="na">matchSpec</span><span class="pi">:</span>
+  <span class="na">action</span><span class="pi">:</span> <span class="s">not</span>
+  <span class="na">predicateMatchSpec</span><span class="pi">:</span>
+    <span class="pi">-</span> <span class="na">action</span><span class="pi">:</span> <span class="s">inModule</span>
+</code></pre></div></div>
+
+<h2 id="how-do-i-know-my-json-is-valid">How do I know my JSON is valid?</h2>
+<p>We have provided the <code class="language-plaintext highlighter-rouge">cfsec-checkgen</code> binary which will validate your check file to ensure that it is valid for use with <code class="language-plaintext highlighter-rouge">cfsec</code>.</p>
+
+<p>In the future, <code class="language-plaintext highlighter-rouge">cfsec-checkgen</code> will facilitate the creation of new check files with a wizard approach, for now it can be used to validate your check file.</p>
+
+<p><code class="language-plaintext highlighter-rouge">shell script
+./cfsec-checkgen validate example/custom/.cfsec/custom_checks.json
+</code></p>
+
+<h2 id="are-there-limitations">Are there limitations?</h2>
+<p>At the moment, check <code class="language-plaintext highlighter-rouge">MatchSpec</code> is limited in the number of check types it can perform, these are as shown in the previous table.</p>
+
+<p>Custom defined checks also don’t come with the comprehensive tests that the built in ones have. This will be addressed in future releases.</p>
+
+                        
+                    </div>
+
+                    
+
+                    <hr class="uk-margin-medium">
+
+                    
+
+
+  
+  
+
+  
+  
+
+
+                </article>
+
+                <script>
+                    // Table of contents scroll to
+                    UIkit.scroll('#markdown-toc a', {
+                        duration: 400,
+                        offset: 120
+                    });
+                </script>
+
+            </div>
+
+    </div>
+</div>
+
+
+    <div id="offcanvas-docs" data-uk-offcanvas="overlay: true">
+    <div class="uk-offcanvas-bar">
+
+        <button class="uk-offcanvas-close" type="button" data-uk-close></button>
+
+        
+            <h5>Getting Started</h5>
+            <ul class="uk-nav uk-nav-default doc-nav">
+                
+
+                
+                    
+                    
+                    <li class="">
+                        <a href="/docs/installation/">Installation</a>
+                    </li>
+                
+                    
+                    
+                    <li class="">
+                        <a href="/docs/usage/">Usage</a>
+                    </li>
+                
+            </ul>
+        
+            <h5>Services</h5>
+            <ul class="uk-nav uk-nav-default doc-nav">
+                
+
+                
+            </ul>
+        
+
+    </div>
+</div>
+
+
+    <div id="offcanvas" data-uk-offcanvas="flip: true; overlay: true">
+    <div class="uk-offcanvas-bar">
+
+        <a class="uk-logo uk-margin-small-bottom" href="/"><img src="http://localhost:4000/uploads/logonav.png" alt="cfsec"></a>
+     
+        <button class="uk-offcanvas-close" type="button" data-uk-close></button>
+      
+        <ul class="uk-nav uk-nav-primary uk-margin-top">
+            
+                
+
+                
+
+                
+                    <li><a href="/" >Home</a></li>
+                
+            
+                
+
+                
+
+                
+                    <li><a href="/docs/installation/" >Docs</a></li>
+                
+            
+                
+
+                
+
+                
+                    <li><a href="/blog/" >Blog</a></li>
+                
+            
+                
+
+                
+
+                
+                    <li><div class="uk-navbar-item"><a class="uk-button uk-button-success" href="/contact/" >Contact</a></div></li>
+                
+            
+        </ul>
+
+        <div class="uk-margin-top uk-text-center">
+            <div data-uk-grid class="uk-child-width-auto uk-grid-small uk-flex-center uk-grid">
+                
+
+
+
+
+
+
+
+
+
+
+<div>
+    <a href="https://github.com/aquasecurity/cfsec" data-uk-icon="icon: github" class="uk-icon-link uk-icon" target="_blank"></a>
+</div>
+
+
+
+<div>
+    <a href="https://wip.cfsec.dev" data-uk-icon="icon: link" class="uk-icon-link uk-icon" target="_blank"></a>
+</div>
+
+
+            </div>
+        </div>
+
+    </div>
+</div>
+
+
+    
+
+    
+        
+    
+
+    
+
+    </body>
+
+</html>
