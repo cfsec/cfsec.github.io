@@ -7,12 +7,10 @@ left:
   - title: Docs
     url: /docs/installation/
 
-  - title: Blog
-    url: /blog/
-
+  # - title: Blog
+  #   url: /blog/
 
 right:
-
   - title: Contact
     url: /contact/
     button: success
