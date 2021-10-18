@@ -22,3 +22,27 @@
 // @import "syntax-highlighting/cld";
 // @import "syntax-highlighting/current";
 
+* {
+    margin: 0; 
+    padding: 0;
+  }
+
+  div#banner { 
+    position: absolute; 
+    top: 0; 
+    left: 0; 
+    background-color: #DDEEEE; 
+    width: 100%; 
+    display: block;
+  }
+  div#banner-content { 
+    width: 800px; 
+    margin: 0 auto; 
+    padding: 10px; 
+    border: 1px solid #000;
+    display: block;
+  }
+  div#main-content { 
+    padding-top: 70px;
+    display: block;
+ }

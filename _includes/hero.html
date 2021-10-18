@@ -8,9 +8,13 @@
     {% assign align = "center" %}
 {% endif %}
 
+
 <header class="uk-background-{{ align }}-center uk-background-cover" style="{% if page.header.background %}background-color: {{ page.header.background }};{% endif %}{% if page.header.image %} background-image: url({% if image contains 'http' %}{{ image }}{% else %}{{ site.uploads | absolute_url }}{{ image }}{% endif %});{% endif %}">
+    {% include alert.html style="danger" text="cfsec is an early stage release - please raise issues through <a href=\"https://github.com/aquasecurity/cfsec/issues/new\">GitHub Issues</a>" %}
     <div class="uk-overlay-header" style="{% if page.header.overlay %}background: {{ page.header.overlay }};{% endif %}">
 
+
+        
         {% include navbar.html %}
 
         <div class="uk-section section-hero uk-position-relative" data-uk-scrollspy="cls: uk-animation-slide-bottom-medium; repeat: true">

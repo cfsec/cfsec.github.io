@@ -35,7 +35,7 @@ $alert-warning-background:                       lighten(mix(white, $global-warn
 $alert-warning-color:                            $global-warning-background !default;
 
 $alert-danger-background:                        lighten(mix(white, $global-danger-background, 40%), 20%) !default;
-$alert-danger-color:                             $global-danger-background !default;
+$alert-danger-color:                             red !default;
 
 
 /* ========================================================================
