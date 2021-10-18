@@ -75,8 +75,6 @@ Resources:
 ### Related Links
 
 
-- [https://cfsec.dev/docs/elasticache/add-description-for-security-group/#elasticache](https://cfsec.dev/docs/elasticache/add-description-for-security-group/#elasticache)
-
 - [https://docs.aws.amazon.com/AmazonElastiCache/latest/mem-ug/SecurityGroups.Creating.html](https://docs.aws.amazon.com/AmazonElastiCache/latest/mem-ug/SecurityGroups.Creating.html)
 
 

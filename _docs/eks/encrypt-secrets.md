@@ -75,8 +75,6 @@ Resources:
 ### Related Links
 
 
-- [https://cfsec.dev/docs/eks/encrypt-secrets/#eks](https://cfsec.dev/docs/eks/encrypt-secrets/#eks)
-
 - [https://aws.amazon.com/about-aws/whats-new/2020/03/amazon-eks-adds-envelope-encryption-for-secrets-with-aws-kms/](https://aws.amazon.com/about-aws/whats-new/2020/03/amazon-eks-adds-envelope-encryption-for-secrets-with-aws-kms/)
 
 

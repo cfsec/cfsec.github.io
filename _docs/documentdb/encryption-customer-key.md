@@ -78,8 +78,6 @@ Resources:
 ### Related Links
 
 
-- [https://cfsec.dev/docs/documentdb/encryption-customer-key/#documentdb](https://cfsec.dev/docs/documentdb/encryption-customer-key/#documentdb)
-
 - [https://docs.aws.amazon.com/documentdb/latest/developerguide/security.encryption.ssl.public-key.html](https://docs.aws.amazon.com/documentdb/latest/developerguide/security.encryption.ssl.public-key.html)
 
 

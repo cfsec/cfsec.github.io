@@ -86,8 +86,6 @@ Resources:
 ### Related Links
 
 
-- [https://cfsec.dev/docs/elastic-search/enforce-https/#elastic-search](https://cfsec.dev/docs/elastic-search/enforce-https/#elastic-search)
-
 - [https://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/es-data-protection.html](https://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/es-data-protection.html)
 
 

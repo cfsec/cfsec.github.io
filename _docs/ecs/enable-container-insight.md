@@ -55,8 +55,6 @@ Resources:
 ### Related Links
 
 
-- [https://cfsec.dev/docs/ecs/enable-container-insight/#ecs](https://cfsec.dev/docs/ecs/enable-container-insight/#ecs)
-
 - [https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/ContainerInsights.html](https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/ContainerInsights.html)
 
 

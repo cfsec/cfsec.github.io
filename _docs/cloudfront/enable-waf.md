@@ -71,8 +71,6 @@ Resources:
 ### Related Links
 
 
-- [https://cfsec.dev/docs/cloudfront/enable-waf/#cloudfront](https://cfsec.dev/docs/cloudfront/enable-waf/#cloudfront)
-
 - [https://docs.aws.amazon.com/waf/latest/developerguide/cloudfront-features.html](https://docs.aws.amazon.com/waf/latest/developerguide/cloudfront-features.html)
 
 

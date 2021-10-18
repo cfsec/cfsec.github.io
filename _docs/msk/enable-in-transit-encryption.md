@@ -61,8 +61,6 @@ Resources:
 ### Related Links
 
 
-- [https://cfsec.dev/docs/msk/enable-in-transit-encryption/#msk](https://cfsec.dev/docs/msk/enable-in-transit-encryption/#msk)
-
 - [https://docs.aws.amazon.com/msk/latest/developerguide/msk-encryption.html](https://docs.aws.amazon.com/msk/latest/developerguide/msk-encryption.html)
 
 

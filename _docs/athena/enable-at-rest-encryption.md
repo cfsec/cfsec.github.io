@@ -58,8 +58,6 @@ Resources:
 ### Related Links
 
 
-- [https://cfsec.dev/docs/athena/enable-at-rest-encryption/#athena](https://cfsec.dev/docs/athena/enable-at-rest-encryption/#athena)
-
 - [https://docs.aws.amazon.com/athena/latest/ug/encryption.html](https://docs.aws.amazon.com/athena/latest/ug/encryption.html)
 
 

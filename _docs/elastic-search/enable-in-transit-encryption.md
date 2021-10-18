@@ -83,8 +83,6 @@ Resources:
 ### Related Links
 
 
-- [https://cfsec.dev/docs/elastic-search/enable-in-transit-encryption/#elastic-search](https://cfsec.dev/docs/elastic-search/enable-in-transit-encryption/#elastic-search)
-
 - [https://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/ntn.html](https://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/ntn.html)
 
 

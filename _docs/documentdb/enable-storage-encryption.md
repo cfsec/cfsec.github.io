@@ -79,8 +79,6 @@ Resources:
 ### Related Links
 
 
-- [https://cfsec.dev/docs/documentdb/enable-storage-encryption/#documentdb](https://cfsec.dev/docs/documentdb/enable-storage-encryption/#documentdb)
-
 - [https://docs.aws.amazon.com/documentdb/latest/developerguide/encryption-at-rest.html](https://docs.aws.amazon.com/documentdb/latest/developerguide/encryption-at-rest.html)
 
 

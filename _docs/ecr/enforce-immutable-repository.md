@@ -62,8 +62,6 @@ Resources:
 ### Related Links
 
 
-- [https://cfsec.dev/docs/ecr/enforce-immutable-repository/#ecr](https://cfsec.dev/docs/ecr/enforce-immutable-repository/#ecr)
-
 - [https://sysdig.com/blog/toctou-tag-mutability/](https://sysdig.com/blog/toctou-tag-mutability/)
 
 

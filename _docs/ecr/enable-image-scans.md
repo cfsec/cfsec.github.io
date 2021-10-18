@@ -60,8 +60,6 @@ Resources:
 ### Related Links
 
 
-- [https://cfsec.dev/docs/ecr/enable-image-scans/#ecr](https://cfsec.dev/docs/ecr/enable-image-scans/#ecr)
-
 - [https://docs.aws.amazon.com/AmazonECR/latest/userguide/image-scanning.html](https://docs.aws.amazon.com/AmazonECR/latest/userguide/image-scanning.html)
 
 

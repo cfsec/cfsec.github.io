@@ -57,8 +57,6 @@ Resources:
 ### Related Links
 
 
-- [https://cfsec.dev/docs/ebs/encryption-customer-key/#ebs](https://cfsec.dev/docs/ebs/encryption-customer-key/#ebs)
-
 - [https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSEncryption.html](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSEncryption.html)
 
 

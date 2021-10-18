@@ -62,8 +62,6 @@ Resources:
 ### Related Links
 
 
-- [https://cfsec.dev/docs/athena/no-encryption-override/#athena](https://cfsec.dev/docs/athena/no-encryption-override/#athena)
-
 - [https://docs.aws.amazon.com/athena/latest/ug/manage-queries-control-costs-with-workgroups.html](https://docs.aws.amazon.com/athena/latest/ug/manage-queries-control-costs-with-workgroups.html)
 
 

@@ -72,8 +72,6 @@ Resources:
 ### Related Links
 
 
-- [https://cfsec.dev/docs/vpc/no-public-ingress-acl/#vpc](https://cfsec.dev/docs/vpc/no-public-ingress-acl/#vpc)
-
 - [https://docs.aws.amazon.com/vpc/latest/userguide/vpc-network-acls.html](https://docs.aws.amazon.com/vpc/latest/userguide/vpc-network-acls.html)
 
 

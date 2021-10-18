@@ -115,8 +115,6 @@ Resources:
 ### Related Links
 
 
-- [https://cfsec.dev/docs/ecs/no-plaintext-secrets/#ecs](https://cfsec.dev/docs/ecs/no-plaintext-secrets/#ecs)
-
 - [https://docs.aws.amazon.com/systems-manager/latest/userguide/integration-ps-secretsmanager.html](https://docs.aws.amazon.com/systems-manager/latest/userguide/integration-ps-secretsmanager.html)
 
 - [https://www.vaultproject.io/](https://www.vaultproject.io/)

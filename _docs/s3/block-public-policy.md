@@ -58,8 +58,6 @@ Resources:
 ### Related Links
 
 
-- [https://cfsec.dev/docs/s3/block-public-policy/#s3](https://cfsec.dev/docs/s3/block-public-policy/#s3)
-
 - [https://docs.aws.amazon.com/AmazonS3/latest/dev-retired/access-control-block-public-access.html](https://docs.aws.amazon.com/AmazonS3/latest/dev-retired/access-control-block-public-access.html)
 
 

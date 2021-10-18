@@ -61,8 +61,6 @@ Resources:
 ### Related Links
 
 
-- [https://cfsec.dev/docs/neptune/enable-log-export/#neptune](https://cfsec.dev/docs/neptune/enable-log-export/#neptune)
-
 - [https://docs.aws.amazon.com/neptune/latest/userguide/auditing.html](https://docs.aws.amazon.com/neptune/latest/userguide/auditing.html)
 
 

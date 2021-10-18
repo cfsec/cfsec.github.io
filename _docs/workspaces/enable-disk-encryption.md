@@ -56,8 +56,6 @@ Resources:
 ### Related Links
 
 
-- [https://cfsec.dev/docs/workspaces/enable-disk-encryption/#workspaces](https://cfsec.dev/docs/workspaces/enable-disk-encryption/#workspaces)
-
 - [https://docs.aws.amazon.com/workspaces/latest/adminguide/encrypt-workspaces.html](https://docs.aws.amazon.com/workspaces/latest/adminguide/encrypt-workspaces.html)
 
 

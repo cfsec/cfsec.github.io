@@ -55,8 +55,6 @@ Resources:
 ### Related Links
 
 
-- [https://cfsec.dev/docs/autoscaling/no-public-ip/#autoscaling](https://cfsec.dev/docs/autoscaling/no-public-ip/#autoscaling)
-
 - [https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-instance-addressing.html](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-instance-addressing.html)
 
 

@@ -99,8 +99,6 @@ Resources:
 ### Related Links
 
 
-- [https://cfsec.dev/docs/lambda/restrict-source-arn/#lambda](https://cfsec.dev/docs/lambda/restrict-source-arn/#lambda)
-
 - [https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lambda-permission.html](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lambda-permission.html)
 
 

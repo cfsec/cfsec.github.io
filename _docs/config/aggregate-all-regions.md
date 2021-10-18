@@ -56,8 +56,6 @@ Resources:
 ### Related Links
 
 
-- [https://cfsec.dev/docs/config/aggregate-all-regions/#config](https://cfsec.dev/docs/config/aggregate-all-regions/#config)
-
 - [https://docs.aws.amazon.com/config/latest/developerguide/aggregate-data.html](https://docs.aws.amazon.com/config/latest/developerguide/aggregate-data.html)
 
 

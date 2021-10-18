@@ -74,8 +74,6 @@ Resources:
 ### Related Links
 
 
-- [https://cfsec.dev/docs/cloudfront/enforce-https/#cloudfront](https://cfsec.dev/docs/cloudfront/enforce-https/#cloudfront)
-
 - [https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/using-https-cloudfront-to-s3-origin.html](https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/using-https-cloudfront-to-s3-origin.html)
 
 

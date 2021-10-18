@@ -54,8 +54,6 @@ Resources:
 ### Related Links
 
 
-- [https://cfsec.dev/docs/s3/no-public-access-with-acl/#s3](https://cfsec.dev/docs/s3/no-public-access-with-acl/#s3)
-
 - [https://docs.aws.amazon.com/AmazonS3/latest/dev/ServerLogs.html](https://docs.aws.amazon.com/AmazonS3/latest/dev/ServerLogs.html)
 
 

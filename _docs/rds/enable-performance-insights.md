@@ -61,8 +61,6 @@ Resources:
 ### Related Links
 
 
-- [https://cfsec.dev/docs/rds/enable-performance-insights/#rds](https://cfsec.dev/docs/rds/enable-performance-insights/#rds)
-
 - [https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Overview.Encryption.htm](https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Overview.Encryption.htm)
 
 

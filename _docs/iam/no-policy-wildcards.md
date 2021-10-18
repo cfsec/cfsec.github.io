@@ -72,8 +72,6 @@ Resources:
 ### Related Links
 
 
-- [https://cfsec.dev/docs/iam/no-policy-wildcards/#iam](https://cfsec.dev/docs/iam/no-policy-wildcards/#iam)
-
 - [https://docs.aws.amazon.com/IAM/latest/UserGuide/best-practices.html](https://docs.aws.amazon.com/IAM/latest/UserGuide/best-practices.html)
 
 

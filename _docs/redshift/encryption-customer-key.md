@@ -58,8 +58,6 @@ Resources:
 ### Related Links
 
 
-- [https://cfsec.dev/docs/redshift/encryption-customer-key/#redshift](https://cfsec.dev/docs/redshift/encryption-customer-key/#redshift)
-
 - [https://docs.aws.amazon.com/redshift/latest/mgmt/working-with-db-encryption.html](https://docs.aws.amazon.com/redshift/latest/mgmt/working-with-db-encryption.html)
 
 

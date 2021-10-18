@@ -67,8 +67,6 @@ Resources:
 ### Related Links
 
 
-- [https://cfsec.dev/docs/elasticache/enable-backup-retention/#elasticache](https://cfsec.dev/docs/elasticache/enable-backup-retention/#elasticache)
-
 - [https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/backups-automatic.html](https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/backups-automatic.html)
 
 

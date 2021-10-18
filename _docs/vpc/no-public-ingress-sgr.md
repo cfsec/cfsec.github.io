@@ -62,8 +62,6 @@ Resources:
 ### Related Links
 
 
-- [https://cfsec.dev/docs/vpc/no-public-ingress-sgr/#vpc](https://cfsec.dev/docs/vpc/no-public-ingress-sgr/#vpc)
-
 - [https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/security-group-rules-reference.html](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/security-group-rules-reference.html)
 
 

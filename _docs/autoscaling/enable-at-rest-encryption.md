@@ -65,8 +65,6 @@ Resources:
 ### Related Links
 
 
-- [https://cfsec.dev/docs/autoscaling/enable-at-rest-encryption/#autoscaling](https://cfsec.dev/docs/autoscaling/enable-at-rest-encryption/#autoscaling)
-
 - [https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/RootDeviceStorage.html](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/RootDeviceStorage.html)
 
 

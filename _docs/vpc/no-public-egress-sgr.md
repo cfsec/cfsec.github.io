@@ -62,8 +62,6 @@ Resources:
 ### Related Links
 
 
-- [https://cfsec.dev/docs/vpc/no-public-egress-sgr/#vpc](https://cfsec.dev/docs/vpc/no-public-egress-sgr/#vpc)
-
 - [https://docs.aws.amazon.com/whitepapers/latest/building-scalable-secure-multi-vpc-network-infrastructure/centralized-egress-to-internet.html](https://docs.aws.amazon.com/whitepapers/latest/building-scalable-secure-multi-vpc-network-infrastructure/centralized-egress-to-internet.html)
 
 

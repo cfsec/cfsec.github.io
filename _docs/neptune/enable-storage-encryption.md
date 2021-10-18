@@ -59,8 +59,6 @@ Resources:
 ### Related Links
 
 
-- [https://cfsec.dev/docs/neptune/enable-storage-encryption/#neptune](https://cfsec.dev/docs/neptune/enable-storage-encryption/#neptune)
-
 - [https://docs.aws.amazon.com/neptune/latest/userguide/encrypt.html](https://docs.aws.amazon.com/neptune/latest/userguide/encrypt.html)
 
 

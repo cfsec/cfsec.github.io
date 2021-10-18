@@ -65,8 +65,6 @@ Resources:
 ### Related Links
 
 
-- [https://cfsec.dev/docs/msk/enable-logging/#msk](https://cfsec.dev/docs/msk/enable-logging/#msk)
-
 - [https://docs.aws.amazon.com/msk/latest/developerguide/msk-logging.html](https://docs.aws.amazon.com/msk/latest/developerguide/msk-logging.html)
 
 

@@ -2,184 +2,186 @@
 - title: Getting Started
   state: open
   docs:
-    - installation
-    - usage
+  - installation
+  - usage
 
 - title: Services
   services:
-    - title: api-gateway
-      service: api-gateway
-      docs:
-        - api-gateway/enable-access-logging
-    - title: athena
-      service: athena
-      docs:
-        - athena/enable-at-rest-encryption
-        - athena/no-encryption-override
-    - title: autoscaling
-      service: autoscaling
-      docs:
-        - autoscaling/enable-at-rest-encryption
-        - autoscaling/no-public-ip
-    - title: cloudfront
-      service: cloudfront
-      docs:
-        - cloudfront/enable-logging
-        - cloudfront/enable-waf
-        - cloudfront/enforce-https
-        - cloudfront/use-secure-tls-policy
-    - title: cloudtrail
-      service: cloudtrail
-      docs:
-        - cloudtrail/enable-all-regions
-        - cloudtrail/enable-at-rest-encryption
-        - cloudtrail/enable-log-validation
-    - title: cloudwatch
-      service: cloudwatch
-      docs:
-        - cloudwatch/log-group-customer-key
-    - title: codebuild
-      service: codebuild
-      docs:
-        - codebuild/enable-encryption
-    - title: config
-      service: config
-      docs:
-        - config/aggregate-all-regions
-    - title: documentdb
-      service: documentdb
-      docs:
-        - documentdb/enable-log-export
-        - documentdb/enable-storage-encryption
-        - documentdb/encryption-customer-key
-    - title: dynamodb
-      service: dynamodb
-      docs:
-        - dynamodb/enable-at-rest-encryption
-    - title: ebs
-      service: ebs
-      docs:
-        - ebs/enable-volume-encryption
-        - ebs/encryption-customer-key
-    - title: ec2
-      service: ec2
-      docs:
-        - ec2/no-secrets-in-user-data
-    - title: ecr
-      service: ecr
-      docs:
-        - ecr/enable-image-scans
-        - ecr/enforce-immutable-repository
-        - ecr/no-public-access
-        - ecr/repository-customer-key
-    - title: ecs
-      service: ecs
-      docs:
-        - ecs/enable-container-insight
-        - ecs/enable-in-transit-encryption
-        - ecs/no-plaintext-secrets
-    - title: efs
-      service: efs
-      docs:
-        - efs/enable-at-rest-encryption
-    - title: eks
-      service: eks
-      docs:
-        - eks/encrypt-secrets
-    - title: elastic-search
-      service: elastic-search
-      docs:
-        - elastic-search/enable-domain-encryption
-        - elastic-search/enable-domain-logging
-        - elastic-search/enable-in-transit-encryption
-        - elastic-search/enforce-https
-        - elastic-search/use-secure-tls-policy
-    - title: elasticache
-      service: elasticache
-      docs:
-        - elasticache/add-description-for-security-group
-        - elasticache/enable-backup-retention
-        - elasticache/enable-in-transit-encryption
-    - title: iam
-      service: iam
-      docs:
-        - iam/no-policy-wildcards
-    - title: kinesis
-      service: kinesis
-      docs:
-        - kinesis/enable-in-transit-encryption
-    - title: lambda
-      service: lambda
-      docs:
-        - lambda/enable-tracing
-        - lambda/restrict-source-arn
-    - title: mq
-      service: mq
-      docs:
-        - mq/enable-audit-logging
-        - mq/enable-general-logging
-        - mq/no-public-access
-    - title: msk
-      service: msk
-      docs:
-        - msk/enable-in-transit-encryption
-        - msk/enable-logging
-    - title: neptune
-      service: neptune
-      docs:
-        - neptune/enable-log-export
-        - neptune/enable-storage-encryption
-    - title: rds
-      service: rds
-      docs:
-        - rds/enable-performance-insights
-        - rds/encrypt-cluster-storage-data
-        - rds/encrypt-instance-storage-data
-        - rds/no-classic-resources
-        - rds/no-public-db-access
-        - rds/specify-backup-retention
-    - title: redshift
-      service: redshift
-      docs:
-        - redshift/add-description-to-security-group
-        - redshift/encryption-customer-key
-        - redshift/no-classic-resources
-        - redshift/use-vpc
-    - title: s3
-      service: s3
-      docs:
-        - s3/block-public-acls
-        - s3/block-public-policy
-        - s3/enable-bucket-encryption
-        - s3/enable-bucket-logging
-        - s3/enable-versioning
-        - s3/ignore-public-acls
-        - s3/no-public-access-with-acl
-        - s3/no-public-buckets
-        - s3/specify-public-access-block
-    - title: sns
-      service: sns
-      docs:
-        - sns/enable-topic-encryption
-    - title: sqs
-      service: sqs
-      docs:
-        - sqs/enable-queue-encryption
-        - sqs/no-wildcards-in-policy-documents
-    - title: ssm
-      service: ssm
-      docs:
-        - ssm/secret-use-customer-key
-    - title: vpc
-      service: vpc
-      docs:
-        - vpc/add-description-to-security-group
-        - vpc/add-description-to-security-group-rule
-        - vpc/no-excessive-port-access
-        - vpc/no-public-egress-sgr
-        - vpc/no-public-ingress-acl
-        - vpc/no-public-ingress-sgr
-    - title: workspaces
-      service: workspaces
-      docs:
-        - workspaces/enable-disk-encryption
+  - title: api-gateway
+    service: api-gateway
+    docs:
+    - api-gateway/enable-access-logging
+  - title: athena
+    service: athena
+    docs:
+    - athena/enable-at-rest-encryption
+    - athena/no-encryption-override
+  - title: autoscaling
+    service: autoscaling
+    docs:
+    - autoscaling/enable-at-rest-encryption
+    - autoscaling/no-public-ip
+  - title: cloudfront
+    service: cloudfront
+    docs:
+    - cloudfront/enable-logging
+    - cloudfront/enable-waf
+    - cloudfront/enforce-https
+    - cloudfront/use-secure-tls-policy
+  - title: cloudtrail
+    service: cloudtrail
+    docs:
+    - cloudtrail/enable-all-regions
+    - cloudtrail/enable-at-rest-encryption
+    - cloudtrail/enable-log-validation
+  - title: cloudwatch
+    service: cloudwatch
+    docs:
+    - cloudwatch/log-group-customer-key
+  - title: codebuild
+    service: codebuild
+    docs:
+    - codebuild/enable-encryption
+  - title: config
+    service: config
+    docs:
+    - config/aggregate-all-regions
+  - title: documentdb
+    service: documentdb
+    docs:
+    - documentdb/enable-log-export
+    - documentdb/enable-storage-encryption
+    - documentdb/encryption-customer-key
+  - title: dynamodb
+    service: dynamodb
+    docs:
+    - dynamodb/enable-at-rest-encryption
+  - title: ebs
+    service: ebs
+    docs:
+    - ebs/enable-volume-encryption
+    - ebs/encryption-customer-key
+  - title: ec2
+    service: ec2
+    docs:
+    - ec2/no-secrets-in-user-data
+  - title: ecr
+    service: ecr
+    docs:
+    - ecr/enable-image-scans
+    - ecr/enforce-immutable-repository
+    - ecr/no-public-access
+    - ecr/repository-customer-key
+  - title: ecs
+    service: ecs
+    docs:
+    - ecs/enable-container-insight
+    - ecs/enable-in-transit-encryption
+    - ecs/no-plaintext-secrets
+  - title: efs
+    service: efs
+    docs:
+    - efs/enable-at-rest-encryption
+  - title: eks
+    service: eks
+    docs:
+    - eks/encrypt-secrets
+  - title: elastic-search
+    service: elastic-search
+    docs:
+    - elastic-search/enable-domain-encryption
+    - elastic-search/enable-domain-logging
+    - elastic-search/enable-in-transit-encryption
+    - elastic-search/enforce-https
+    - elastic-search/use-secure-tls-policy
+  - title: elasticache
+    service: elasticache
+    docs:
+    - elasticache/add-description-for-security-group
+    - elasticache/enable-backup-retention
+    - elasticache/enable-in-transit-encryption
+  - title: iam
+    service: iam
+    docs:
+    - iam/no-policy-wildcards
+  - title: kinesis
+    service: kinesis
+    docs:
+    - kinesis/enable-in-transit-encryption
+  - title: lambda
+    service: lambda
+    docs:
+    - lambda/enable-tracing
+    - lambda/restrict-source-arn
+  - title: mq
+    service: mq
+    docs:
+    - mq/enable-audit-logging
+    - mq/enable-general-logging
+    - mq/no-public-access
+  - title: msk
+    service: msk
+    docs:
+    - msk/enable-in-transit-encryption
+    - msk/enable-logging
+  - title: neptune
+    service: neptune
+    docs:
+    - neptune/enable-log-export
+    - neptune/enable-storage-encryption
+  - title: rds
+    service: rds
+    docs:
+    - rds/enable-performance-insights
+    - rds/encrypt-cluster-storage-data
+    - rds/encrypt-instance-storage-data
+    - rds/no-classic-resources
+    - rds/no-public-db-access
+    - rds/specify-backup-retention
+  - title: redshift
+    service: redshift
+    docs:
+    - redshift/add-description-to-security-group
+    - redshift/encryption-customer-key
+    - redshift/no-classic-resources
+    - redshift/use-vpc
+  - title: s3
+    service: s3
+    docs:
+    - s3/block-public-acls
+    - s3/block-public-policy
+    - s3/enable-bucket-encryption
+    - s3/enable-bucket-logging
+    - s3/enable-versioning
+    - s3/ignore-public-acls
+    - s3/no-public-access-with-acl
+    - s3/no-public-buckets
+    - s3/specify-public-access-block
+  - title: sns
+    service: sns
+    docs:
+    - sns/enable-topic-encryption
+  - title: sqs
+    service: sqs
+    docs:
+    - sqs/enable-queue-encryption
+    - sqs/no-wildcards-in-policy-documents
+  - title: ssm
+    service: ssm
+    docs:
+    - ssm/secret-use-customer-key
+  - title: vpc
+    service: vpc
+    docs:
+    - vpc/add-description-to-security-group
+    - vpc/add-description-to-security-group-rule
+    - vpc/no-excessive-port-access
+    - vpc/no-public-egress-sgr
+    - vpc/no-public-ingress-acl
+    - vpc/no-public-ingress-sgr
+  - title: workspaces
+    service: workspaces
+    docs:
+    - workspaces/enable-disk-encryption
+
+

@@ -64,8 +64,6 @@ Resources:
 ### Related Links
 
 
-- [https://cfsec.dev/docs/efs/enable-at-rest-encryption/#efs](https://cfsec.dev/docs/efs/enable-at-rest-encryption/#efs)
-
 - [https://docs.aws.amazon.com/efs/latest/ug/encryption.html](https://docs.aws.amazon.com/efs/latest/ug/encryption.html)
 
 

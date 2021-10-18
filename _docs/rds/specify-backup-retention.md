@@ -57,8 +57,6 @@ Resources:
 ### Related Links
 
 
-- [https://cfsec.dev/docs/rds/specify-backup-retention/#rds](https://cfsec.dev/docs/rds/specify-backup-retention/#rds)
-
 - [https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_WorkingWithAutomatedBackups.html#USER_WorkingWithAutomatedBackups.BackupRetention](https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_WorkingWithAutomatedBackups.html#USER_WorkingWithAutomatedBackups.BackupRetention)
 
 

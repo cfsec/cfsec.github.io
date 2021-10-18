@@ -55,8 +55,6 @@ Resources:
 ### Related Links
 
 
-- [https://cfsec.dev/docs/rds/no-classic-resources/#rds](https://cfsec.dev/docs/rds/no-classic-resources/#rds)
-
 - [https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-classic-platform.html](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-classic-platform.html)
 
 

@@ -68,8 +68,6 @@ Resources:
 ### Related Links
 
 
-- [https://cfsec.dev/docs/vpc/no-excessive-port-access/#vpc](https://cfsec.dev/docs/vpc/no-excessive-port-access/#vpc)
-
 - [https://docs.aws.amazon.com/vpc/latest/userguide/vpc-network-acls.html](https://docs.aws.amazon.com/vpc/latest/userguide/vpc-network-acls.html)
 
 

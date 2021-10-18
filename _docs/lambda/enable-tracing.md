@@ -76,8 +76,6 @@ Resources:
 ### Related Links
 
 
-- [https://cfsec.dev/docs/lambda/enable-tracing/#lambda](https://cfsec.dev/docs/lambda/enable-tracing/#lambda)
-
 - [https://docs.aws.amazon.com/lambda/latest/dg/services-xray.html](https://docs.aws.amazon.com/lambda/latest/dg/services-xray.html)
 
 

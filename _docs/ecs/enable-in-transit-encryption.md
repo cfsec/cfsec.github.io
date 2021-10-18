@@ -111,8 +111,6 @@ Resources:
 ### Related Links
 
 
-- [https://cfsec.dev/docs/ecs/enable-in-transit-encryption/#ecs](https://cfsec.dev/docs/ecs/enable-in-transit-encryption/#ecs)
-
 - [https://docs.aws.amazon.com/AmazonECS/latest/userguide/efs-volumes.html](https://docs.aws.amazon.com/AmazonECS/latest/userguide/efs-volumes.html)
 
 - [https://docs.aws.amazon.com/efs/latest/ug/encryption-in-transit.html](https://docs.aws.amazon.com/efs/latest/ug/encryption-in-transit.html)

@@ -61,8 +61,6 @@ Resources:
 ### Related Links
 
 
-- [https://cfsec.dev/docs/cloudtrail/enable-log-validation/#cloudtrail](https://cfsec.dev/docs/cloudtrail/enable-log-validation/#cloudtrail)
-
 - [https://docs.aws.amazon.com/awscloudtrail/latest/userguide/cloudtrail-log-file-validation-intro.html](https://docs.aws.amazon.com/awscloudtrail/latest/userguide/cloudtrail-log-file-validation-intro.html)
 
 

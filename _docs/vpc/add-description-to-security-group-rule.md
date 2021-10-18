@@ -65,8 +65,6 @@ Resources:
 ### Related Links
 
 
-- [https://cfsec.dev/docs/vpc/add-description-to-security-group-rule/#vpc](https://cfsec.dev/docs/vpc/add-description-to-security-group-rule/#vpc)
-
 - [https://www.cloudconformity.com/knowledge-base/aws/EC2/security-group-rules-description.html](https://www.cloudconformity.com/knowledge-base/aws/EC2/security-group-rules-description.html)
 
 

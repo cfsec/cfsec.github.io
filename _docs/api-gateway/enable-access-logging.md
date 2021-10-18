@@ -67,8 +67,6 @@ Resources:
 ### Related Links
 
 
-- [https://cfsec.dev/docs/api-gateway/enable-access-logging/#api-gateway](https://cfsec.dev/docs/api-gateway/enable-access-logging/#api-gateway)
-
 - [https://docs.aws.amazon.com/apigateway/latest/developerguide/set-up-logging.html](https://docs.aws.amazon.com/apigateway/latest/developerguide/set-up-logging.html)
 
 

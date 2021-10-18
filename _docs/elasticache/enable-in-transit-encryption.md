@@ -79,8 +79,6 @@ Resources:
 ### Related Links
 
 
-- [https://cfsec.dev/docs/elasticache/enable-in-transit-encryption/#elasticache](https://cfsec.dev/docs/elasticache/enable-in-transit-encryption/#elasticache)
-
 - [https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/in-transit-encryption.html](https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/in-transit-encryption.html)
 
 

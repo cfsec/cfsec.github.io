@@ -60,8 +60,6 @@ Resources:
 ### Related Links
 
 
-- [https://cfsec.dev/docs/redshift/add-description-to-security-group/#redshift](https://cfsec.dev/docs/redshift/add-description-to-security-group/#redshift)
-
 - [https://www.cloudconformity.com/knowledge-base/aws/EC2/security-group-rules-description.html](https://www.cloudconformity.com/knowledge-base/aws/EC2/security-group-rules-description.html)
 
 

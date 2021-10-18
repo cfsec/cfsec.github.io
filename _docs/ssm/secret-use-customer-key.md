@@ -61,8 +61,6 @@ Resources:
 ### Related Links
 
 
-- [https://cfsec.dev/docs/ssm/secret-use-customer-key/#ssm](https://cfsec.dev/docs/ssm/secret-use-customer-key/#ssm)
-
 - [https://docs.aws.amazon.com/kms/latest/developerguide/services-secrets-manager.html#asm-encrypt](https://docs.aws.amazon.com/kms/latest/developerguide/services-secrets-manager.html#asm-encrypt)
 
 

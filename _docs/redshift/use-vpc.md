@@ -60,8 +60,6 @@ Resources:
 ### Related Links
 
 
-- [https://cfsec.dev/docs/redshift/use-vpc/#redshift](https://cfsec.dev/docs/redshift/use-vpc/#redshift)
-
 - [https://docs.aws.amazon.com/redshift/latest/mgmt/managing-clusters-vpc.html](https://docs.aws.amazon.com/redshift/latest/mgmt/managing-clusters-vpc.html)
 
 

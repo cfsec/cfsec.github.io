@@ -74,8 +74,6 @@ Resources:
 ### Related Links
 
 
-- [https://cfsec.dev/docs/cloudfront/use-secure-tls-policy/#cloudfront](https://cfsec.dev/docs/cloudfront/use-secure-tls-policy/#cloudfront)
-
 - [https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/secure-connections-supported-viewer-protocols-ciphers.html](https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/secure-connections-supported-viewer-protocols-ciphers.html)
 
 

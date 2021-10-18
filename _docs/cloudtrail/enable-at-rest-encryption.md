@@ -61,8 +61,6 @@ Resources:
 ### Related Links
 
 
-- [https://cfsec.dev/docs/cloudtrail/enable-at-rest-encryption/#cloudtrail](https://cfsec.dev/docs/cloudtrail/enable-at-rest-encryption/#cloudtrail)
-
 - [https://docs.aws.amazon.com/awscloudtrail/latest/userguide/encrypting-cloudtrail-log-files-with-aws-kms.html](https://docs.aws.amazon.com/awscloudtrail/latest/userguide/encrypting-cloudtrail-log-files-with-aws-kms.html)
 
 

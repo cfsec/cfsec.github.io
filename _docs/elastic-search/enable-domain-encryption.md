@@ -81,8 +81,6 @@ Resources:
 ### Related Links
 
 
-- [https://cfsec.dev/docs/elastic-search/enable-domain-encryption/#elastic-search](https://cfsec.dev/docs/elastic-search/enable-domain-encryption/#elastic-search)
-
 - [https://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/encryption-at-rest.html](https://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/encryption-at-rest.html)
 
 

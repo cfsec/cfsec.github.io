@@ -60,8 +60,6 @@ Resources:
 ### Related Links
 
 
-- [https://cfsec.dev/docs/mq/enable-general-logging/#mq](https://cfsec.dev/docs/mq/enable-general-logging/#mq)
-
 - [https://docs.aws.amazon.com/amazon-mq/latest/developer-guide/configure-logging-monitoring-activemq.html](https://docs.aws.amazon.com/amazon-mq/latest/developer-guide/configure-logging-monitoring-activemq.html)
 
 

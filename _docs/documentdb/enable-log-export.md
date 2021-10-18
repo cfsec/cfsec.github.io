@@ -78,8 +78,6 @@ Resources:
 ### Related Links
 
 
-- [https://cfsec.dev/docs/documentdb/enable-log-export/#documentdb](https://cfsec.dev/docs/documentdb/enable-log-export/#documentdb)
-
 - [https://docs.aws.amazon.com/documentdb/latest/developerguide/event-auditing.html](https://docs.aws.amazon.com/documentdb/latest/developerguide/event-auditing.html)
 
 

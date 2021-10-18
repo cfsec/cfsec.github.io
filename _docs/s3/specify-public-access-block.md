@@ -57,8 +57,6 @@ Resources:
 ### Related Links
 
 
-- [https://cfsec.dev/docs/s3/specify-public-access-block/#s3](https://cfsec.dev/docs/s3/specify-public-access-block/#s3)
-
 - [https://docs.aws.amazon.com/AmazonS3/latest/userguide/access-control-block-public-access.html](https://docs.aws.amazon.com/AmazonS3/latest/userguide/access-control-block-public-access.html)
 
 

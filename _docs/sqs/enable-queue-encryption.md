@@ -59,8 +59,6 @@ Resources:
 ### Related Links
 
 
-- [https://cfsec.dev/docs/sqs/enable-queue-encryption/#sqs](https://cfsec.dev/docs/sqs/enable-queue-encryption/#sqs)
-
 - [https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-server-side-encryption.html](https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-server-side-encryption.html)
 
 

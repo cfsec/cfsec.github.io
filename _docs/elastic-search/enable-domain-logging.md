@@ -89,8 +89,6 @@ Resources:
 ### Related Links
 
 
-- [https://cfsec.dev/docs/elastic-search/enable-domain-logging/#elastic-search](https://cfsec.dev/docs/elastic-search/enable-domain-logging/#elastic-search)
-
 - [https://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/es-createdomain-configure-slow-logs.html](https://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/es-createdomain-configure-slow-logs.html)
 
 

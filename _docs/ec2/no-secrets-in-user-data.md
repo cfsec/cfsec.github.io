@@ -74,8 +74,6 @@ Resources:
 ### Related Links
 
 
-- [https://cfsec.dev/docs/ec2/no-secrets-in-user-data/#ec2](https://cfsec.dev/docs/ec2/no-secrets-in-user-data/#ec2)
-
 - [https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instancedata-add-user-data.html](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instancedata-add-user-data.html)
 
 

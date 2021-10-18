@@ -55,8 +55,6 @@ Resources:
 ### Related Links
 
 
-- [https://cfsec.dev/docs/redshift/no-classic-resources/#redshift](https://cfsec.dev/docs/redshift/no-classic-resources/#redshift)
-
 - [https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-classic-platform.html](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-classic-platform.html)
 
 

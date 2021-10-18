@@ -60,8 +60,6 @@ Resources:
 ### Related Links
 
 
-- [https://cfsec.dev/docs/cloudtrail/enable-all-regions/#cloudtrail](https://cfsec.dev/docs/cloudtrail/enable-all-regions/#cloudtrail)
-
 - [https://docs.aws.amazon.com/awscloudtrail/latest/userguide/receive-cloudtrail-log-files-from-multiple-regions.html](https://docs.aws.amazon.com/awscloudtrail/latest/userguide/receive-cloudtrail-log-files-from-multiple-regions.html)
 
 

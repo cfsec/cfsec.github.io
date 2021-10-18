@@ -58,8 +58,6 @@ Resources:
 ### Related Links
 
 
-- [https://cfsec.dev/docs/mq/no-public-access/#mq](https://cfsec.dev/docs/mq/no-public-access/#mq)
-
 - [https://docs.aws.amazon.com/amazon-mq/latest/developer-guide/using-amazon-mq-securely.html#prefer-brokers-without-public-accessibility](https://docs.aws.amazon.com/amazon-mq/latest/developer-guide/using-amazon-mq-securely.html#prefer-brokers-without-public-accessibility)
 
 

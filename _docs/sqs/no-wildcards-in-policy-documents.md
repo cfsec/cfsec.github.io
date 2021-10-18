@@ -89,8 +89,6 @@ Resources:
 ### Related Links
 
 
-- [https://cfsec.dev/docs/sqs/no-wildcards-in-policy-documents/#sqs](https://cfsec.dev/docs/sqs/no-wildcards-in-policy-documents/#sqs)
-
 - [https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-security-best-practices.html](https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-security-best-practices.html)
 
 

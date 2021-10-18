@@ -94,8 +94,6 @@ Resources:
 ### Related Links
 
 
-- [https://cfsec.dev/docs/ecr/no-public-access/#ecr](https://cfsec.dev/docs/ecr/no-public-access/#ecr)
-
 - [https://docs.aws.amazon.com/AmazonECR/latest/public/public-repository-policies.html](https://docs.aws.amazon.com/AmazonECR/latest/public/public-repository-policies.html)
 
 

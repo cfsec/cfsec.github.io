@@ -61,8 +61,6 @@ Resources:
 ### Related Links
 
 
-- [https://cfsec.dev/docs/rds/encrypt-instance-storage-data/#rds](https://cfsec.dev/docs/rds/encrypt-instance-storage-data/#rds)
-
 - [https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Overview.Encryption.html](https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Overview.Encryption.html)
 
 

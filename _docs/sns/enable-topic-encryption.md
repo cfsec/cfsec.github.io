@@ -59,8 +59,6 @@ Resources:
 ### Related Links
 
 
-- [https://cfsec.dev/docs/sns/enable-topic-encryption/#sns](https://cfsec.dev/docs/sns/enable-topic-encryption/#sns)
-
 - [https://docs.aws.amazon.com/sns/latest/dg/sns-server-side-encryption.html](https://docs.aws.amazon.com/sns/latest/dg/sns-server-side-encryption.html)
 
 

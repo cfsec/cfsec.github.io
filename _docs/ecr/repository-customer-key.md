@@ -60,8 +60,6 @@ Resources:
 ### Related Links
 
 
-- [https://cfsec.dev/docs/ecr/repository-customer-key/#ecr](https://cfsec.dev/docs/ecr/repository-customer-key/#ecr)
-
 - [https://docs.aws.amazon.com/AmazonECR/latest/userguide/encryption-at-rest.html](https://docs.aws.amazon.com/AmazonECR/latest/userguide/encryption-at-rest.html)
 
 

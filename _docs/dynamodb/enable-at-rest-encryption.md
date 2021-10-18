@@ -63,8 +63,6 @@ Resources:
 ### Related Links
 
 
-- [https://cfsec.dev/docs/dynamodb/enable-at-rest-encryption/#dynamodb](https://cfsec.dev/docs/dynamodb/enable-at-rest-encryption/#dynamodb)
-
 - [https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/DAXEncryptionAtRest.html](https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/DAXEncryptionAtRest.html)
 
 - [https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-dax-cluster.html](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-dax-cluster.html)

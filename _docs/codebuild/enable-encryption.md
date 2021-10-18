@@ -90,8 +90,6 @@ Resources:
 ### Related Links
 
 
-- [https://cfsec.dev/docs/codebuild/enable-encryption/#codebuild](https://cfsec.dev/docs/codebuild/enable-encryption/#codebuild)
-
 - [https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codebuild-project-artifacts.html](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codebuild-project-artifacts.html)
 
 - [https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-codebuild-project.html](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-codebuild-project.html)

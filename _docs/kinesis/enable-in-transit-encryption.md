@@ -68,8 +68,6 @@ Resources:
 ### Related Links
 
 
-- [https://cfsec.dev/docs/kinesis/enable-in-transit-encryption/#kinesis](https://cfsec.dev/docs/kinesis/enable-in-transit-encryption/#kinesis)
-
 - [https://docs.aws.amazon.com/streams/latest/dev/server-side-encryption.html](https://docs.aws.amazon.com/streams/latest/dev/server-side-encryption.html)
 
 

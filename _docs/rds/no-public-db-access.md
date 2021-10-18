@@ -58,8 +58,6 @@ Resources:
 ### Related Links
 
 
-- [https://cfsec.dev/docs/rds/no-public-db-access/#rds](https://cfsec.dev/docs/rds/no-public-db-access/#rds)
-
 - [https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_VPC.WorkingWithRDSInstanceinaVPC.html#USER_VPC.Hiding](https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_VPC.WorkingWithRDSInstanceinaVPC.html#USER_VPC.Hiding)
 
 
