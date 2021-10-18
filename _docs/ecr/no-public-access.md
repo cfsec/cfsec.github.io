@@ -18,7 +18,7 @@ Do not allow public access in the policy
 
 ### Insecure Example
 
-The following example will fail the aws-ecr-no-public-access check.
+The following example will fail the  check.
 
 ```yaml
 ---
@@ -53,7 +53,7 @@ Resources:
 
 ### Secure Example
 
-The following example will pass the aws-ecr-no-public-access check.
+The following example will pass the  check.
 
 ```yaml
 ---
@@ -89,5 +89,13 @@ Resources:
 ```
 
 
+
+
+### Related Links
+
+
+- [https://cfsec.dev/docs/ecr/no-public-access/#ecr](https://cfsec.dev/docs/ecr/no-public-access/#ecr)
+
+- [https://docs.aws.amazon.com/AmazonECR/latest/public/public-repository-policies.html](https://docs.aws.amazon.com/AmazonECR/latest/public/public-repository-policies.html)
 
 

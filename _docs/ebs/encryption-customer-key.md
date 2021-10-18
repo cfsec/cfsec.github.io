@@ -18,7 +18,7 @@ Enable encryption using customer managed keys
 
 ### Insecure Example
 
-The following example will fail the aws-ebs-encryption-customer-key check.
+The following example will fail the  check.
 
 ```yaml
 ---
@@ -36,7 +36,7 @@ Resources:
 
 ### Secure Example
 
-The following example will pass the aws-ebs-encryption-customer-key check.
+The following example will pass the  check.
 
 ```yaml
 ---
@@ -52,5 +52,13 @@ Resources:
 ```
 
 
+
+
+### Related Links
+
+
+- [https://cfsec.dev/docs/ebs/encryption-customer-key/#ebs](https://cfsec.dev/docs/ebs/encryption-customer-key/#ebs)
+
+- [https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSEncryption.html](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSEncryption.html)
 
 

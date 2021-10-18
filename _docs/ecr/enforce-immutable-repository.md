@@ -20,7 +20,7 @@ Only use immutable images in ECR
 
 ### Insecure Example
 
-The following example will fail the aws-ecr-enforce-immutable-repository check.
+The following example will fail the  check.
 
 ```yaml
 ---
@@ -38,7 +38,7 @@ Resources:
 
 ### Secure Example
 
-The following example will pass the aws-ecr-enforce-immutable-repository check.
+The following example will pass the  check.
 
 ```yaml
 ---
@@ -61,6 +61,8 @@ Resources:
 
 ### Related Links
 
+
+- [https://cfsec.dev/docs/ecr/enforce-immutable-repository/#ecr](https://cfsec.dev/docs/ecr/enforce-immutable-repository/#ecr)
 
 - [https://sysdig.com/blog/toctou-tag-mutability/](https://sysdig.com/blog/toctou-tag-mutability/)
 

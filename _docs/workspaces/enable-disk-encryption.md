@@ -18,7 +18,7 @@ Root and user volume encryption should be enabled
 
 ### Insecure Example
 
-The following example will fail the aws-workspaces-enable-disk-encryption check.
+The following example will fail the  check.
 
 ```yaml
 ---
@@ -36,7 +36,7 @@ Resources:
 
 ### Secure Example
 
-The following example will pass the aws-workspaces-enable-disk-encryption check.
+The following example will pass the  check.
 
 ```yaml
 ---
@@ -55,6 +55,8 @@ Resources:
 
 ### Related Links
 
+
+- [https://cfsec.dev/docs/workspaces/enable-disk-encryption/#workspaces](https://cfsec.dev/docs/workspaces/enable-disk-encryption/#workspaces)
 
 - [https://docs.aws.amazon.com/workspaces/latest/adminguide/encrypt-workspaces.html](https://docs.aws.amazon.com/workspaces/latest/adminguide/encrypt-workspaces.html)
 

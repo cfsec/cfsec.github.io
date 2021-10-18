@@ -18,7 +18,7 @@ Enable export logs
 
 ### Insecure Example
 
-The following example will fail the aws-documentdb-enable-log-export check.
+The following example will fail the  check.
 
 ```yaml
 ---
@@ -45,7 +45,7 @@ The following example will fail the aws-documentdb-enable-log-export check.
 
 ### Secure Example
 
-The following example will pass the aws-documentdb-enable-log-export check.
+The following example will pass the  check.
 
 ```yaml
 ---
@@ -73,5 +73,13 @@ Resources:
 ```
 
 
+
+
+### Related Links
+
+
+- [https://cfsec.dev/docs/documentdb/enable-log-export/#documentdb](https://cfsec.dev/docs/documentdb/enable-log-export/#documentdb)
+
+- [https://docs.aws.amazon.com/documentdb/latest/developerguide/event-auditing.html](https://docs.aws.amazon.com/documentdb/latest/developerguide/event-auditing.html)
 
 

@@ -18,7 +18,7 @@ Enable encryption at rest
 
 ### Insecure Example
 
-The following example will fail the aws-cloudtrail-enable-at-rest-encryption check.
+The following example will fail the  check.
 
 ```yaml
 ---
@@ -38,7 +38,7 @@ Resources:
 
 ### Secure Example
 
-The following example will pass the aws-cloudtrail-enable-at-rest-encryption check.
+The following example will pass the  check.
 
 ```yaml
 ---
@@ -60,6 +60,8 @@ Resources:
 
 ### Related Links
 
+
+- [https://cfsec.dev/docs/cloudtrail/enable-at-rest-encryption/#cloudtrail](https://cfsec.dev/docs/cloudtrail/enable-at-rest-encryption/#cloudtrail)
 
 - [https://docs.aws.amazon.com/awscloudtrail/latest/userguide/encrypting-cloudtrail-log-files-with-aws-kms.html](https://docs.aws.amazon.com/awscloudtrail/latest/userguide/encrypting-cloudtrail-log-files-with-aws-kms.html)
 

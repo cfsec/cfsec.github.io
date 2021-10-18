@@ -20,7 +20,7 @@ Only allow HTTPS for CloudFront distribution communication
 
 ### Insecure Example
 
-The following example will fail the aws-cloudfront-enforce-https check.
+The following example will fail the  check.
 
 ```yaml
 ---
@@ -46,7 +46,7 @@ Resources:
 
 ### Secure Example
 
-The following example will pass the aws-cloudfront-enforce-https check.
+The following example will pass the  check.
 
 ```yaml
 ---
@@ -73,6 +73,8 @@ Resources:
 
 ### Related Links
 
+
+- [https://cfsec.dev/docs/cloudfront/enforce-https/#cloudfront](https://cfsec.dev/docs/cloudfront/enforce-https/#cloudfront)
 
 - [https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/using-https-cloudfront-to-s3-origin.html](https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/using-https-cloudfront-to-s3-origin.html)
 

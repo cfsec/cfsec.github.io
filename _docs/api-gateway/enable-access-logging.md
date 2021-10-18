@@ -18,7 +18,7 @@ Enable logging for API Gateway stages
 
 ### Insecure Example
 
-The following example will fail the aws-api-gateway-enable-access-logging check.
+The following example will fail the  check.
 
 ```yaml
 ---
@@ -41,7 +41,7 @@ Resources:
 
 ### Secure Example
 
-The following example will pass the aws-api-gateway-enable-access-logging check.
+The following example will pass the  check.
 
 ```yaml
 ---
@@ -66,6 +66,8 @@ Resources:
 
 ### Related Links
 
+
+- [https://cfsec.dev/docs/api-gateway/enable-access-logging/#api-gateway](https://cfsec.dev/docs/api-gateway/enable-access-logging/#api-gateway)
 
 - [https://docs.aws.amazon.com/apigateway/latest/developerguide/set-up-logging.html](https://docs.aws.amazon.com/apigateway/latest/developerguide/set-up-logging.html)
 

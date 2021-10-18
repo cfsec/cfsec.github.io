@@ -18,7 +18,7 @@ Enable WAF for the CloudFront distribution
 
 ### Insecure Example
 
-The following example will fail the aws-cloudfront-enable-waf check.
+The following example will fail the  check.
 
 ```yaml
 ---
@@ -43,7 +43,7 @@ Resources:
 
 ### Secure Example
 
-The following example will pass the aws-cloudfront-enable-waf check.
+The following example will pass the  check.
 
 ```yaml
 ---
@@ -70,6 +70,8 @@ Resources:
 
 ### Related Links
 
+
+- [https://cfsec.dev/docs/cloudfront/enable-waf/#cloudfront](https://cfsec.dev/docs/cloudfront/enable-waf/#cloudfront)
 
 - [https://docs.aws.amazon.com/waf/latest/developerguide/cloudfront-features.html](https://docs.aws.amazon.com/waf/latest/developerguide/cloudfront-features.html)
 

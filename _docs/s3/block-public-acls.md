@@ -20,7 +20,7 @@ Enable blocking any PUT calls with a public ACL specified
 
 ### Insecure Example
 
-The following example will fail the aws-s3-block-public-acls check.
+The following example will fail the  check.
 
 ```yaml
 ---
@@ -36,7 +36,7 @@ Resources:
 
 ### Secure Example
 
-The following example will pass the aws-s3-block-public-acls check.
+The following example will pass the  check.
 
 ```yaml
 ---
@@ -57,6 +57,8 @@ Resources:
 
 ### Related Links
 
+
+- [https://cfsec.dev/docs/s3/block-public-acls/#s3](https://cfsec.dev/docs/s3/block-public-acls/#s3)
 
 - [https://docs.aws.amazon.com/AmazonS3/latest/userguide/access-control-block-public-access.html](https://docs.aws.amazon.com/AmazonS3/latest/userguide/access-control-block-public-access.html)
 

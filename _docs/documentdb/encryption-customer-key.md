@@ -18,7 +18,7 @@ Enable encryption using customer managed keys
 
 ### Insecure Example
 
-The following example will fail the aws-documentdb-encryption-customer-key check.
+The following example will fail the  check.
 
 ```yaml
 ---
@@ -45,7 +45,7 @@ The following example will fail the aws-documentdb-encryption-customer-key check
 
 ### Secure Example
 
-The following example will pass the aws-documentdb-encryption-customer-key check.
+The following example will pass the  check.
 
 ```yaml
 ---
@@ -73,5 +73,13 @@ Resources:
 ```
 
 
+
+
+### Related Links
+
+
+- [https://cfsec.dev/docs/documentdb/encryption-customer-key/#documentdb](https://cfsec.dev/docs/documentdb/encryption-customer-key/#documentdb)
+
+- [https://docs.aws.amazon.com/documentdb/latest/developerguide/security.encryption.ssl.public-key.html](https://docs.aws.amazon.com/documentdb/latest/developerguide/security.encryption.ssl.public-key.html)
 
 

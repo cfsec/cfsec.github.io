@@ -18,7 +18,7 @@ Enable ECR image scanning
 
 ### Insecure Example
 
-The following example will fail the aws-ecr-enable-image-scans check.
+The following example will fail the  check.
 
 ```yaml
 ---
@@ -36,7 +36,7 @@ Resources:
 
 ### Secure Example
 
-The following example will pass the aws-ecr-enable-image-scans check.
+The following example will pass the  check.
 
 ```yaml
 ---
@@ -59,6 +59,8 @@ Resources:
 
 ### Related Links
 
+
+- [https://cfsec.dev/docs/ecr/enable-image-scans/#ecr](https://cfsec.dev/docs/ecr/enable-image-scans/#ecr)
 
 - [https://docs.aws.amazon.com/AmazonECR/latest/userguide/image-scanning.html](https://docs.aws.amazon.com/AmazonECR/latest/userguide/image-scanning.html)
 

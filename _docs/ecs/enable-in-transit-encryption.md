@@ -18,7 +18,7 @@ Enable in transit encryption when using efs
 
 ### Insecure Example
 
-The following example will fail the aws-ecs-enable-in-transit-encryption check.
+The following example will fail the  check.
 
 ```yaml
 ---
@@ -63,7 +63,7 @@ Resources:
 
 ### Secure Example
 
-The following example will pass the aws-ecs-enable-in-transit-encryption check.
+The following example will pass the  check.
 
 ```yaml
 ---
@@ -110,6 +110,8 @@ Resources:
 
 ### Related Links
 
+
+- [https://cfsec.dev/docs/ecs/enable-in-transit-encryption/#ecs](https://cfsec.dev/docs/ecs/enable-in-transit-encryption/#ecs)
 
 - [https://docs.aws.amazon.com/AmazonECS/latest/userguide/efs-volumes.html](https://docs.aws.amazon.com/AmazonECS/latest/userguide/efs-volumes.html)
 

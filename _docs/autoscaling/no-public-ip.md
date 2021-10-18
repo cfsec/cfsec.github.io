@@ -18,7 +18,7 @@ Set the instance to not be publicly accessible
 
 ### Insecure Example
 
-The following example will fail the aws-autoscaling-no-public-ip check.
+The following example will fail the  check.
 
 ```yaml
 ---
@@ -36,7 +36,7 @@ Resources:
 
 ### Secure Example
 
-The following example will pass the aws-autoscaling-no-public-ip check.
+The following example will pass the  check.
 
 ```yaml
 ---
@@ -54,6 +54,8 @@ Resources:
 
 ### Related Links
 
+
+- [https://cfsec.dev/docs/autoscaling/no-public-ip/#autoscaling](https://cfsec.dev/docs/autoscaling/no-public-ip/#autoscaling)
 
 - [https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-instance-addressing.html](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-instance-addressing.html)
 

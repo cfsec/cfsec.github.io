@@ -18,7 +18,7 @@ Use customer managed keys
 
 ### Insecure Example
 
-The following example will fail the aws-ecr-repository-customer-key check.
+The following example will fail the  check.
 
 ```yaml
 ---
@@ -36,7 +36,7 @@ Resources:
 
 ### Secure Example
 
-The following example will pass the aws-ecr-repository-customer-key check.
+The following example will pass the  check.
 
 ```yaml
 ---
@@ -59,6 +59,8 @@ Resources:
 
 ### Related Links
 
+
+- [https://cfsec.dev/docs/ecr/repository-customer-key/#ecr](https://cfsec.dev/docs/ecr/repository-customer-key/#ecr)
 
 - [https://docs.aws.amazon.com/AmazonECR/latest/userguide/encryption-at-rest.html](https://docs.aws.amazon.com/AmazonECR/latest/userguide/encryption-at-rest.html)
 

@@ -18,7 +18,7 @@ Turn on log validation for Cloudtrail
 
 ### Insecure Example
 
-The following example will fail the aws-cloudtrail-enable-log-validation check.
+The following example will fail the  check.
 
 ```yaml
 ---
@@ -38,7 +38,7 @@ Resources:
 
 ### Secure Example
 
-The following example will pass the aws-cloudtrail-enable-log-validation check.
+The following example will pass the  check.
 
 ```yaml
 ---
@@ -60,6 +60,8 @@ Resources:
 
 ### Related Links
 
+
+- [https://cfsec.dev/docs/cloudtrail/enable-log-validation/#cloudtrail](https://cfsec.dev/docs/cloudtrail/enable-log-validation/#cloudtrail)
 
 - [https://docs.aws.amazon.com/awscloudtrail/latest/userguide/cloudtrail-log-file-validation-intro.html](https://docs.aws.amazon.com/awscloudtrail/latest/userguide/cloudtrail-log-file-validation-intro.html)
 

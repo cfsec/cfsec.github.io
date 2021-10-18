@@ -18,7 +18,7 @@ Enforce the configuration to prevent client overrides
 
 ### Insecure Example
 
-The following example will fail the aws-athena-no-encryption-override check.
+The following example will fail the  check.
 
 ```yaml
 ---
@@ -39,7 +39,7 @@ Resources:
 
 ### Secure Example
 
-The following example will pass the aws-athena-no-encryption-override check.
+The following example will pass the  check.
 
 ```yaml
 ---
@@ -61,6 +61,8 @@ Resources:
 
 ### Related Links
 
+
+- [https://cfsec.dev/docs/athena/no-encryption-override/#athena](https://cfsec.dev/docs/athena/no-encryption-override/#athena)
 
 - [https://docs.aws.amazon.com/athena/latest/ug/manage-queries-control-costs-with-workgroups.html](https://docs.aws.amazon.com/athena/latest/ug/manage-queries-control-costs-with-workgroups.html)
 

@@ -7,7 +7,9 @@ redirect_from:
   - /docs/home/
 ---
 
-Install with brew/linuxbrew:
+> cfsec is in early access stage, it is not advised to rely on it for a production workload.
+
+<!-- Install with brew/linuxbrew:
 
 ```cmd
 brew install cfsec
@@ -17,9 +19,9 @@ Install with Chocolatey:
 
 ```cmd
 choco install cfsec
-```
+``` -->
 
-You can also grab the binary for your system from the [releases page](https://github.com/aquasecurity/cfsec/releases).
+You can grab the binary for your system from the [releases page](https://github.com/aquasecurity/cfsec/releases).
 
 Alternatively, install with Go:
 
@@ -27,11 +29,11 @@ Alternatively, install with Go:
 go install github.com/aquasecurity/cfsec/cmd/cfsec@latest
 ```
 
-### Verifying signed binaries
+<!-- ### Verifying signed binaries
 
 All cfsec binaries are signed with out signing key `D66B222A3EA4C25D5D1A097FC34ACEFB46EC39CE`. The steps below detail how to verify the signature of the keys.
-
-
+ -->
+<!-- 
 #### Public Key
 
 The public key for `signing@cfsec.dev` can be downloaded [here](/assets/signing.asc)
@@ -122,7 +124,7 @@ nX5QmAEwF/nBYV3Du7TIvHtz91yL8A==
    gpg:                using RSA key D66B222A3EA4C25D5D1A097FC34ACEFB46EC39CE
    gpg: Good signature from "cfsec Signing (Code signing for cfsec) <signing@cfsec.dev>" [ultimate]
 
-   ```
+   ``` -->
 
 ## Usage
 
@@ -133,7 +135,7 @@ The exit status will be non-zero if cfsec finds problems, otherwise the exit sta
 ```cmd
 cfsec .
 ```
-
+<!-- 
 ## Use with Docker
 
 As an alternative to installing and running cfsec on your system, you may
@@ -144,4 +146,4 @@ To run:
 ```cmd
 docker run --rm -it -v "$(pwd):/src" aquasec/cfsec /src
 ```
-
+ -->

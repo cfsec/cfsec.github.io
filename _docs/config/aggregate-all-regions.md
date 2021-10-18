@@ -20,7 +20,7 @@ Set the aggregator to cover all regions
 
 ### Insecure Example
 
-The following example will fail the aws-config-aggregate-all-regions check.
+The following example will fail the  check.
 
 ```yaml
 ---
@@ -36,7 +36,7 @@ Resources:
 
 ### Secure Example
 
-The following example will pass the aws-config-aggregate-all-regions check.
+The following example will pass the  check.
 
 ```yaml
 ---
@@ -55,6 +55,8 @@ Resources:
 
 ### Related Links
 
+
+- [https://cfsec.dev/docs/config/aggregate-all-regions/#config](https://cfsec.dev/docs/config/aggregate-all-regions/#config)
 
 - [https://docs.aws.amazon.com/config/latest/developerguide/aggregate-data.html](https://docs.aws.amazon.com/config/latest/developerguide/aggregate-data.html)
 

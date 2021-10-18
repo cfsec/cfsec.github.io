@@ -18,7 +18,7 @@ Turn on encryption for all block devices
 
 ### Insecure Example
 
-The following example will fail the aws-autoscaling-enable-at-rest-encryption check.
+The following example will fail the  check.
 
 ```yaml
 ---
@@ -42,7 +42,7 @@ Resources:
 
 ### Secure Example
 
-The following example will pass the aws-autoscaling-enable-at-rest-encryption check.
+The following example will pass the  check.
 
 ```yaml
 ---
@@ -64,6 +64,8 @@ Resources:
 
 ### Related Links
 
+
+- [https://cfsec.dev/docs/autoscaling/enable-at-rest-encryption/#autoscaling](https://cfsec.dev/docs/autoscaling/enable-at-rest-encryption/#autoscaling)
 
 - [https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/RootDeviceStorage.html](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/RootDeviceStorage.html)
 

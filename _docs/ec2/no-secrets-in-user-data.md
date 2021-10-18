@@ -18,7 +18,7 @@ Remove sensitive data from the EC2 instance user-data
 
 ### Insecure Example
 
-The following example will fail the aws-ec2-no-secrets-in-user-data check.
+The following example will fail the  check.
 
 ```yaml
 ---
@@ -45,7 +45,7 @@ Resources:
 
 ### Secure Example
 
-The following example will pass the aws-ec2-no-secrets-in-user-data check.
+The following example will pass the  check.
 
 ```yaml
 ---
@@ -73,6 +73,8 @@ Resources:
 
 ### Related Links
 
+
+- [https://cfsec.dev/docs/ec2/no-secrets-in-user-data/#ec2](https://cfsec.dev/docs/ec2/no-secrets-in-user-data/#ec2)
 
 - [https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instancedata-add-user-data.html](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instancedata-add-user-data.html)
 

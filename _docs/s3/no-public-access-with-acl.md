@@ -20,7 +20,7 @@ Add a logging block to the resource to enable access logging
 
 ### Insecure Example
 
-The following example will fail the aws-s3-no-public-access-with-acl check.
+The following example will fail the  check.
 
 ```yaml
 ---
@@ -36,7 +36,7 @@ Resources:
 
 ### Secure Example
 
-The following example will pass the aws-s3-no-public-access-with-acl check.
+The following example will pass the  check.
 
 ```yaml
 ---
@@ -53,6 +53,8 @@ Resources:
 
 ### Related Links
 
+
+- [https://cfsec.dev/docs/s3/no-public-access-with-acl/#s3](https://cfsec.dev/docs/s3/no-public-access-with-acl/#s3)
 
 - [https://docs.aws.amazon.com/AmazonS3/latest/dev/ServerLogs.html](https://docs.aws.amazon.com/AmazonS3/latest/dev/ServerLogs.html)
 

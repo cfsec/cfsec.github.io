@@ -18,7 +18,7 @@ Enable storage encryption
 
 ### Insecure Example
 
-The following example will fail the aws-documentdb-enable-storage-encryption check.
+The following example will fail the  check.
 
 ```yaml
 ---
@@ -45,7 +45,7 @@ The following example will fail the aws-documentdb-enable-storage-encryption che
 
 ### Secure Example
 
-The following example will pass the aws-documentdb-enable-storage-encryption check.
+The following example will pass the  check.
 
 ```yaml
 ---
@@ -74,5 +74,13 @@ Resources:
 ```
 
 
+
+
+### Related Links
+
+
+- [https://cfsec.dev/docs/documentdb/enable-storage-encryption/#documentdb](https://cfsec.dev/docs/documentdb/enable-storage-encryption/#documentdb)
+
+- [https://docs.aws.amazon.com/documentdb/latest/developerguide/encryption-at-rest.html](https://docs.aws.amazon.com/documentdb/latest/developerguide/encryption-at-rest.html)
 
 

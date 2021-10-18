@@ -18,7 +18,7 @@ Enable logging for CloudFront distributions
 
 ### Insecure Example
 
-The following example will fail the aws-cloudfront-enable-logging check.
+The following example will fail the  check.
 
 ```yaml
 ---
@@ -41,7 +41,7 @@ Resources:
 
 ### Secure Example
 
-The following example will pass the aws-cloudfront-enable-logging check.
+The following example will pass the  check.
 
 ```yaml
 ---
@@ -67,6 +67,8 @@ Resources:
 
 ### Related Links
 
+
+- [https://cfsec.dev/docs/cloudfront/enable-logging/#cloudfront](https://cfsec.dev/docs/cloudfront/enable-logging/#cloudfront)
 
 - [https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/AccessLogs.html](https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/AccessLogs.html)
 

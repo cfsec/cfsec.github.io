@@ -18,7 +18,7 @@ Enable CMK encryption of CloudWatch Log Groups
 
 ### Insecure Example
 
-The following example will fail the aws-cloudwatch-log-group-customer-key check.
+The following example will fail the  check.
 
 ```yaml
 ---
@@ -36,7 +36,7 @@ Resources:
 
 ### Secure Example
 
-The following example will pass the aws-cloudwatch-log-group-customer-key check.
+The following example will pass the  check.
 
 ```yaml
 ---
@@ -55,6 +55,8 @@ Resources:
 
 ### Related Links
 
+
+- [https://cfsec.dev/docs/cloudwatch/log-group-customer-key/#cloudwatch](https://cfsec.dev/docs/cloudwatch/log-group-customer-key/#cloudwatch)
 
 - [https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/encrypt-log-data-kms.html](https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/encrypt-log-data-kms.html)
 

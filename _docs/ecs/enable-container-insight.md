@@ -18,7 +18,7 @@ Enable Container Insights
 
 ### Insecure Example
 
-The following example will fail the aws-ecs-enable-container-insight check.
+The following example will fail the  check.
 
 ```yaml
 ---
@@ -34,7 +34,7 @@ Resources:
 
 ### Secure Example
 
-The following example will pass the aws-ecs-enable-container-insight check.
+The following example will pass the  check.
 
 ```yaml
 ---
@@ -54,6 +54,8 @@ Resources:
 
 ### Related Links
 
+
+- [https://cfsec.dev/docs/ecs/enable-container-insight/#ecs](https://cfsec.dev/docs/ecs/enable-container-insight/#ecs)
 
 - [https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/ContainerInsights.html](https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/ContainerInsights.html)
 

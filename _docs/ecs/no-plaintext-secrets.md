@@ -18,7 +18,7 @@ Use secrets for the task definition
 
 ### Insecure Example
 
-The following example will fail the aws-ecs-no-plaintext-secrets check.
+The following example will fail the  check.
 
 ```yaml
 ---
@@ -60,13 +60,14 @@ Resources:
           EFSVolumeConfiguration:
             FilesystemId: "fs1"
             TransitEncryption: DISABLED
+
 ```
 
 
 
 ### Secure Example
 
-The following example will pass the aws-ecs-no-plaintext-secrets check.
+The following example will pass the  check.
 
 ```yaml
 ---
@@ -113,6 +114,8 @@ Resources:
 
 ### Related Links
 
+
+- [https://cfsec.dev/docs/ecs/no-plaintext-secrets/#ecs](https://cfsec.dev/docs/ecs/no-plaintext-secrets/#ecs)
 
 - [https://docs.aws.amazon.com/systems-manager/latest/userguide/integration-ps-secretsmanager.html](https://docs.aws.amazon.com/systems-manager/latest/userguide/integration-ps-secretsmanager.html)
 

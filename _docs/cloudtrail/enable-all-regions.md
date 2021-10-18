@@ -7,7 +7,7 @@ permalink: /docs/cloudtrail/enable-all-regions/
 
 ### Explanation
 
-When creating Cloudtrail in the AWS Management Console the trail is configured by default to be multi-region, this isn't the case with the Cloudformation resource. Cloudtrail should cover the full AWS account to ensure you can track changes in regions you are not actively operting in.
+When creating Cloudtrail in the AWS Management Console the trail is configured by default to be multi-region, this isn't the case with the Terraform resource. Cloudtrail should cover the full AWS account to ensure you can track changes in regions you are not actively operting in.
 
 ### Possible Impact
 Activity could be happening in your account in a different region
@@ -18,7 +18,7 @@ Enable Cloudtrail in all regions
 
 ### Insecure Example
 
-The following example will fail the aws-cloudtrail-enable-all-regions check.
+The following example will fail the  check.
 
 ```yaml
 ---
@@ -38,7 +38,7 @@ Resources:
 
 ### Secure Example
 
-The following example will pass the aws-cloudtrail-enable-all-regions check.
+The following example will pass the  check.
 
 ```yaml
 ---
@@ -59,6 +59,8 @@ Resources:
 
 ### Related Links
 
+
+- [https://cfsec.dev/docs/cloudtrail/enable-all-regions/#cloudtrail](https://cfsec.dev/docs/cloudtrail/enable-all-regions/#cloudtrail)
 
 - [https://docs.aws.amazon.com/awscloudtrail/latest/userguide/receive-cloudtrail-log-files-from-multiple-regions.html](https://docs.aws.amazon.com/awscloudtrail/latest/userguide/receive-cloudtrail-log-files-from-multiple-regions.html)
 
