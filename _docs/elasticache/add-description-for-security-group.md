@@ -24,6 +24,7 @@ The following example will fail the  check.
 
 ```yaml
 ---
+AWSTemplateFormatVersion: 2010-09-09
 Resources:
   BadExampleCacheGroup:
     Type: AWS::ElastiCache::SecurityGroup
@@ -51,6 +52,7 @@ The following example will pass the  check.
 
 ```yaml
 ---
+AWSTemplateFormatVersion: 2010-09-09
 Resources:
   GoodExampleCacheGroup:
     Type: AWS::ElastiCache::SecurityGroup

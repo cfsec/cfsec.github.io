@@ -22,6 +22,7 @@ The following example will fail the  check.
 
 ```yaml
 ---
+AWSTemplateFormatVersion: 2010-09-09
 Resources:
   BadExample:
     Type: AWS::ECR::Repository
@@ -57,6 +58,7 @@ The following example will pass the  check.
 
 ```yaml
 ---
+AWSTemplateFormatVersion: 2010-09-09
 Resources:
   GoodExample:
     Type: AWS::ECR::Repository
