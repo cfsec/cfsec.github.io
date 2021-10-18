@@ -1,5 +1,5 @@
 title: cfsec
-description: A static analysis security scanner for your Cloudformation code. Discover problems with your infrastructure before hackers do.
+description: A static analysis security scanner for your CloudFormation code. Discover problems with your infrastructure before hackers do.
 lang: en
 
 # Site subpath, e.g. /blog

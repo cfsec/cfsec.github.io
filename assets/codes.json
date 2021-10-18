@@ -757,7 +757,7 @@
             "provider": "openstack",
             "description": "No plaintext password for compute instance",
             "impact": "Including a plaintext password could lead to compromised instance",
-            "resolution": "Do not use plaintext passwords in Cloudformation files",
+            "resolution": "Do not use plaintext passwords in CloudFormation files",
             "doc_url": "https://cfsec.dev/docs/openstack/compute/no-plaintext-password/"
         },
         {
@@ -1866,7 +1866,7 @@
             "service": "misc",
             "provider": "aws",
             "description": "AWS provider has access credentials specified.",
-            "impact": "Exposing the credentials in the Cloudformation provider increases the risk of secret leakage",
+            "impact": "Exposing the credentials in the CloudFormation provider increases the risk of secret leakage",
             "resolution": "Don't include access credentials in plain text",
             "doc_url": "https://cfsec.dev/docs/aws/misc/no-exposing-plaintext-credentials/"
         },

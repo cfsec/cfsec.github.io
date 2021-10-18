@@ -18,7 +18,7 @@ Custom checks are defined as json files which sit in the `.cfsec` folder in the 
 
 ### Overriding check directory
 The default location for custom checks can be overridden, this is done using the `--custom-check-dir` to specify another location to load the checks from instead.
-This is useful when global checks are to applied to the Cloudformation under test.
+This is useful when global checks are to applied to the CloudFormation under test.
 
 ### What does a check file look like?
 Check files are simply json, this ensures that checks can be put together without requiring Go knowledge or being able to build a new release of cfsec to include your custom code.
@@ -420,7 +420,7 @@ matchSpec:
 ```
 
 ##### requiresPresence
-The `requiresPresence` checks that the resouce in `name` is also present in the Cloudformation code.
+The `requiresPresence` checks that the resouce in `name` is also present in the CloudFormation code.
 
 If you wanted to ensure that `aws_vpc_flowlogs` is present if there is a `aws_vpc`, you might use the following `matchSpec`:
 

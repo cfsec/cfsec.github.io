@@ -69,10 +69,10 @@ If you have code that is deeper in the github repo, you can use `working_directo
       - name: cfsec
         uses: cfsec/cfsec-sarif-action@v0.0.3
         with:
-          working_directory: Cloudformation/relevant
+          working_directory: CloudFormation/relevant
           sarif_file: cfsec.sarif         
           github_token: $${{ secrets.GITHUB_TOKEN }}
 
 ```
 
-This will target the checks to all folders under `Cloudformation/relevant`
+This will target the checks to all folders under `CloudFormation/relevant`

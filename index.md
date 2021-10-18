@@ -2,10 +2,10 @@
 layout: page
 width: expand
 hero:
-    subtitle: A static analysis security scanner for your Cloud Formation code
+    subtitle: A static analysis security scanner for your CloudFormation code
     image: logo.png
     search: true
-    content: cfsec is a developer-first security scanner for Cloud Formation templates. It uses static analysis to parse your yaml or json files to ensure security issues can be detected before your infrastructure changes take effect. <br/><br/>Designed to run locally or in your CI pipelines, developer-friendly output and fully documented checks mean detection and remediation can take place as quickly and efficiently as possible.
+    content: cfsec is a developer-first security scanner for CloudFormation templates. It uses static analysis to parse your yaml or json files to ensure security issues can be detected before your infrastructure changes take effect. <br/><br/>Designed to run locally or in your CI pipelines, developer-friendly output and fully documented checks mean detection and remediation can take place as quickly and efficiently as possible.
 ---
 
 
