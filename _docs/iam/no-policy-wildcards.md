@@ -34,9 +34,9 @@ Resources:
         Statement:
           - Effect: Allow
             Action:
-              - 'CloudFormation:Describe*'
-              - 'CloudFormation:List*'
-              - 'CloudFormation:Get*'
+              - 'cloudformation:Describe*'
+              - 'cloudformation:List*'
+              - 'cloudformation:Get*'
             Resource: '*'
 
 ```
