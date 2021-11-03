@@ -18,11 +18,10 @@ Turn on encryption for all block devices
 
 ### Insecure Example
 
-The following example will fail the  check.
+The following example will fail the AVD-AWS-0008 check.
 
 ```yaml
 ---
-AWSTemplateFormatVersion: 2010-09-09
 Resources:
   BadExample:
     Properties:
@@ -43,11 +42,10 @@ Resources:
 
 ### Secure Example
 
-The following example will pass the  check.
+The following example will pass the AVD-AWS-0008 check.
 
 ```yaml
 ---
-AWSTemplateFormatVersion: 2010-09-09
 Resources:
   GoodExample:
     Properties:

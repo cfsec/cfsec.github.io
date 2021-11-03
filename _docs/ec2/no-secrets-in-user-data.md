@@ -18,11 +18,10 @@ Remove sensitive data from the EC2 instance user-data
 
 ### Insecure Example
 
-The following example will fail the  check.
+The following example will fail the AVD-AWS-0029 check.
 
 ```yaml
 ---
-AWSTemplateFormatVersion: 2010-09-09
 Resources:
   BadExample:
     Type: AWS::EC2::Instance
@@ -46,11 +45,10 @@ Resources:
 
 ### Secure Example
 
-The following example will pass the  check.
+The following example will pass the AVD-AWS-0029 check.
 
 ```yaml
 ---
-AWSTemplateFormatVersion: 2010-09-09
 Resources:
   GoodExample:
     Type: AWS::EC2::Instance

@@ -18,11 +18,10 @@ Enable encryption for EFS
 
 ### Insecure Example
 
-The following example will fail the  check.
+The following example will fail the AVD-AWS-0037 check.
 
 ```yaml
 ---
-AWSTemplateFormatVersion: 2010-09-09
 Resources:
   BadExample:
     Type: AWS::EFS::FileSystem
@@ -41,11 +40,10 @@ Resources:
 
 ### Secure Example
 
-The following example will pass the  check.
+The following example will pass the AVD-AWS-0037 check.
 
 ```yaml
 ---
-AWSTemplateFormatVersion: 2010-09-09
 Resources:
   GoodExample:
     Type: AWS::EFS::FileSystem

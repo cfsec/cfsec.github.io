@@ -18,11 +18,10 @@ Enable CMK encryption of CloudWatch Log Groups
 
 ### Insecure Example
 
-The following example will fail the  check.
+The following example will fail the AVD-AWS-0017 check.
 
 ```yaml
 ---
-AWSTemplateFormatVersion: 2010-09-09
 Resources:
   BadExample:
     Type: AWS::Logs::LogGroup
@@ -37,11 +36,10 @@ Resources:
 
 ### Secure Example
 
-The following example will pass the  check.
+The following example will pass the AVD-AWS-0017 check.
 
 ```yaml
 ---
-AWSTemplateFormatVersion: 2010-09-09
 Resources:
   GoodExample:
     Type: AWS::Logs::LogGroup

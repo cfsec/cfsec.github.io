@@ -18,11 +18,10 @@ Add a logging block to the resource to enable access logging
 
 ### Insecure Example
 
-The following example will fail the  check.
+The following example will fail the AVD-AWS-0089 check.
 
 ```yaml
 ---
-AWSTemplateFormatVersion: 2010-09-09
 Resources:
   DisabledEncryptionBucket:
     Properties:
@@ -34,11 +33,10 @@ Resources:
 
 ### Secure Example
 
-The following example will pass the  check.
+The following example will pass the AVD-AWS-0089 check.
 
 ```yaml
 ---
-AWSTemplateFormatVersion: 2010-09-09
 Resources:
   GoodExample:
     Properties:

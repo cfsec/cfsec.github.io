@@ -18,7 +18,7 @@ Explicitly set the retention period to greater than the default
 
 ### Insecure Example
 
-The following example will fail the  check.
+The following example will fail the AVD-AWS-0077 check.
 
 ```yaml
 ---
@@ -36,7 +36,7 @@ Resources:
 
 ### Secure Example
 
-The following example will pass the  check.
+The following example will pass the AVD-AWS-0077 check.
 
 ```yaml
 ---

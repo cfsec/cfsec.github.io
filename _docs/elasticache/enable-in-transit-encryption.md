@@ -18,11 +18,10 @@ Enable in transit encryption for replication group
 
 ### Insecure Example
 
-The following example will fail the  check.
+The following example will fail the AVD-AWS-0051 check.
 
 ```yaml
 ---
-AWSTemplateFormatVersion: 2010-09-09
 Resources:
   BadExample:
     Type: 'AWS::ElastiCache::ReplicationGroup'
@@ -48,11 +47,10 @@ Resources:
 
 ### Secure Example
 
-The following example will pass the  check.
+The following example will pass the AVD-AWS-0051 check.
 
 ```yaml
 ---
-AWSTemplateFormatVersion: 2010-09-09
 Resources:
   GoodExample:
     Type: 'AWS::ElastiCache::ReplicationGroup'

@@ -18,11 +18,10 @@ Define a aws_s3_bucket_public_access_block for the given bucket to control publi
 
 ### Insecure Example
 
-The following example will fail the  check.
+The following example will fail the AVD-AWS-0094 check.
 
 ```yaml
 ---
-AWSTemplateFormatVersion: 2010-09-09
 Resources:
   BadExample:
     Properties:
@@ -35,11 +34,10 @@ Resources:
 
 ### Secure Example
 
-The following example will pass the  check.
+The following example will pass the AVD-AWS-0094 check.
 
 ```yaml
 ---
-AWSTemplateFormatVersion: 2010-09-09
 Resources:
   GoodExample:
     Properties:

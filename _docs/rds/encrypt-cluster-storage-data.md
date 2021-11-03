@@ -20,7 +20,7 @@ Enable encryption for RDS clusters
 
 ### Insecure Example
 
-The following example will fail the  check.
+The following example will fail the AVD-AWS-0079 check.
 
 ```yaml
 ---
@@ -39,7 +39,7 @@ Resources:
 
 ### Secure Example
 
-The following example will pass the  check.
+The following example will pass the AVD-AWS-0079 check.
 
 ```yaml
 ---

@@ -18,7 +18,7 @@ Enable encryption of Neptune storage
 
 ### Insecure Example
 
-The following example will fail the  check.
+The following example will fail the AVD-AWS-0076 check.
 
 ```yaml
 ---
@@ -37,7 +37,7 @@ Resources:
 
 ### Secure Example
 
-The following example will pass the  check.
+The following example will pass the AVD-AWS-0076 check.
 
 ```yaml
 ---

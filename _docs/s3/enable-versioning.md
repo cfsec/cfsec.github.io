@@ -22,11 +22,10 @@ Enable versioning to protect against accidental/malicious removal or modificatio
 
 ### Insecure Example
 
-The following example will fail the  check.
+The following example will fail the AVD-AWS-0090 check.
 
 ```yaml
 ---
-AWSTemplateFormatVersion: 2010-09-09
 Resources:
   BadExample:
     Type: AWS::S3::Bucket
@@ -37,11 +36,10 @@ Resources:
 
 ### Secure Example
 
-The following example will pass the  check.
+The following example will pass the AVD-AWS-0090 check.
 
 ```yaml
 ---
-AWSTemplateFormatVersion: 2010-09-09
 Resources:
   GoodExample:
     Properties:

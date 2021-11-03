@@ -18,11 +18,10 @@ Enforce the configuration to prevent client overrides
 
 ### Insecure Example
 
-The following example will fail the  check.
+The following example will fail the AVD-AWS-0007 check.
 
 ```yaml
 ---
-AWSTemplateFormatVersion: 2010-09-09
 Resources:
   BadExample:
     Properties:
@@ -40,11 +39,10 @@ Resources:
 
 ### Secure Example
 
-The following example will pass the  check.
+The following example will pass the AVD-AWS-0007 check.
 
 ```yaml
 ---
-AWSTemplateFormatVersion: 2010-09-09
 Resources:
   GoodExample:
     Properties:

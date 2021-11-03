@@ -18,7 +18,7 @@ Enable encryption using customer managed keys
 
 ### Insecure Example
 
-The following example will fail the  check.
+The following example will fail the AVD-AWS-0022 check.
 
 ```yaml
 ---
@@ -45,11 +45,10 @@ The following example will fail the  check.
 
 ### Secure Example
 
-The following example will pass the  check.
+The following example will pass the AVD-AWS-0022 check.
 
 ```yaml
 ---
-AWSTemplateFormatVersion: 2010-09-09
 Resources:
   GoodExample:
     Type: "AWS::DocDB::DBCluster"

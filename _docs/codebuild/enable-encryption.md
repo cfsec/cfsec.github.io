@@ -18,11 +18,10 @@ Enable encryption for CodeBuild project artifacts
 
 ### Insecure Example
 
-The following example will fail the  check.
+The following example will fail the AVD-AWS-0018 check.
 
 ```yaml
 ---
-AWSTemplateFormatVersion: 2010-09-09
 Resources:
   GoodProject:
     Type: AWS::CodeBuild::Project
@@ -54,11 +53,10 @@ Resources:
 
 ### Secure Example
 
-The following example will pass the  check.
+The following example will pass the AVD-AWS-0018 check.
 
 ```yaml
 ---
-AWSTemplateFormatVersion: 2010-09-09
 Resources:
   GoodProject:
     Type: AWS::CodeBuild::Project

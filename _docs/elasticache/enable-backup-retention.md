@@ -18,11 +18,10 @@ Configure snapshot retention for redis cluster
 
 ### Insecure Example
 
-The following example will fail the  check.
+The following example will fail the AVD-AWS-0050 check.
 
 ```yaml
 ---
-AWSTemplateFormatVersion: 2010-09-09
 Resources:
   BadExample:
     Type: AWS::ElastiCache::CacheCluster
@@ -42,11 +41,10 @@ Resources:
 
 ### Secure Example
 
-The following example will pass the  check.
+The following example will pass the AVD-AWS-0050 check.
 
 ```yaml
 ---
-AWSTemplateFormatVersion: 2010-09-09
 Resources:
   GoodExample:
     Type: AWS::ElastiCache::CacheCluster

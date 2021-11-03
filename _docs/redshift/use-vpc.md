@@ -20,7 +20,7 @@ Deploy Redshift cluster into a non default VPC
 
 ### Insecure Example
 
-The following example will fail the  check.
+The following example will fail the AVD-AWS-0085 check.
 
 ```yaml
 ---
@@ -39,7 +39,7 @@ Resources:
 
 ### Secure Example
 
-The following example will pass the  check.
+The following example will pass the AVD-AWS-0085 check.
 
 ```yaml
 ---

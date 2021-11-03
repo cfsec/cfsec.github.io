@@ -18,11 +18,10 @@ Enable encryption at rest for DAX Cluster
 
 ### Insecure Example
 
-The following example will fail the  check.
+The following example will fail the AVD-AWS-0023 check.
 
 ```yaml
 ---
-AWSTemplateFormatVersion: 2010-09-09
 Resources:
   daxCluster:
     Type: AWS::DAX::Cluster
@@ -40,11 +39,10 @@ Resources:
 
 ### Secure Example
 
-The following example will pass the  check.
+The following example will pass the AVD-AWS-0023 check.
 
 ```yaml
 ---
-AWSTemplateFormatVersion: 2010-09-09
 Resources:
   daxCluster:
     Type: AWS::DAX::Cluster
